@@ -1,0 +1,20 @@
+{
+  "generated": "2026-11-23",
+  "note": "topic -> canonical URL; link from here, do not duplicate content",
+  "canonical": {
+    "introduction": "https://docs.algovoi.co.uk/introduction",
+    "protocols-and-chains": "https://docs.algovoi.co.uk/protocols-and-chains",
+    "x402": "https://docs.algovoi.co.uk/protocols/x402",
+    "mpp": "https://docs.algovoi.co.uk/protocols/mpp",
+    "ap2": "https://docs.algovoi.co.uk/protocols/ap2",
+    "a2a": "https://docs.algovoi.co.uk/protocols/a2a",
+    "solana-actions": "https://docs.algovoi.co.uk/protocols/solana-actions",
+    "verify-a-receipt": "https://docs.algovoi.co.uk/verify-a-receipt",
+    "compliance-duties": "https://docs.algovoi.co.uk/compliance-duties",
+    "pay-rail": "https://docs.algovoi.co.uk/algovoi-pay",
+    "buy-or-self-host": "https://docs.algovoi.co.uk/buy-or-self-host",
+    "marketing-apex": "https://algovoi.co.uk/",
+    "substrate": "https://algovoi.co.uk/substrate.html",
+    "product-atlas": "https://github.com/chopmob-cloud/algovoi-product-atlas"
+  }
+}

@@ -13,6 +13,9 @@ Two axes:
 
 Each key element also has its own page under [`elements/`](elements/) listing the products that touch it.
 
+See also: [`docs-strategy.md`](docs-strategy.md) — the consolidated GitHub × docs.algovoi.co.uk AEO/SEO approach ·
+[`llms.txt`](llms.txt) — answer-engine ingest · [`data/canonical-urls.json`](data/canonical-urls.json) — canonical URL registry.
+
 ## The stack
 
 | Layer | What it is |

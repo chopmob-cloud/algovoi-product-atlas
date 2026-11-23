@@ -1,0 +1,106 @@
+# AlgoVoi Product Atlas
+
+> Documentation-only map of every public AlgoVoi product and how each overlaps the key architectural elements. Generated from the live GitHub inventory. No sellable code.
+
+## Docs
+- [Product catalogue](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/products.md): every public AlgoVoi repo grouped by architectural layer, with descriptions and element tags.
+- [Overlap matrix](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/overlap.md): which of the 12 key elements each product implements or depends on.
+- [Consolidated docs approach](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/docs-strategy.md): how GitHub and docs.algovoi.co.uk fit together, AEO/SEO-friendly.
+
+## Key elements
+- [JCS canonicalisation (RFC 8785)](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/jcs.md): RFC 8785 JSON Canonicalization Scheme.
+- [Content-addressed references](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/refs.md): Deterministic SHA-256-over-JCS identifiers (action_ref, card_ref, task_ref, artifact_ref, delegation/journey/revocation refs).
+- [RFC 9421 HTTP signatures + RFC 9530 Content-Digest](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/rfc9421.md): HTTP Message Signatures and Content-Digest.
+- [Post-quantum cryptography](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/pqc.md): ML-DSA / ML-KEM (NIST FIPS 203/204) and Falcon-1024 (FIPS 206), classical+PQ hybrid.
+- [Payment-lifecycle receipt / evidence formats](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/receipts.md): payment-mandate, settlement-attestation, refund, cancellation, Payment Evidence Frame (PEF), composite trust-query.
+- [Keystone composition (L2) / Fabric spine](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/keystone.md): The Keystone SDK and the algovoi-fabric composition spine: bind authority -> policy -> decision -> delegation -> outcome into one tamper-evident, fail-closed chain.
+- [Cross-language conformance / cross-validation](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/conformance.md): Signed, byte-for-byte conformance batteries across independent implementations (the 10-language moat).
+- [Offline third-party verification / audit](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/verify.md): Standalone verifiers and audit bundles a relying party can run with no AlgoVoi service in the loop: verify.algovoi.co.uk, verify-it-yourself, evidence readers, reseal-verify.
+- [Key identity / DID / credential binding](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/keyid.md): did:key / did:web resolution, key-to-credential binding (RFC 9421), key hygiene / primality soundness, rotation lineage.
+- [On-chain settlement / state proofs / bridges (AVM)](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/settlement.md): Algorand & Voi mesh settlement receipts argued from state proofs, portable proofpacks, mainnet bridges, consensus blocklist, multi-chain wallet auth.
+- [Agent payment protocols (AP2 / ACP / x402 / MPP / A2A)](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/protocols.md): Adapters and reference implementations for the agent-payment protocols: AP2 mandates, ACP checkout, x402 paid HTTP, MPP, A2A message/artifact/task refs, MCP tool surface.
+- [Hosted gateway / pay rail / platform adapters](https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master/elements/gateway.md): The hosted x402 gateway (api.algovoi.co.uk), the pay rail (pay.algovoi.co.uk), the platform, and the ecommerce / marketplace / AI-agent / no-code adapters.
+
+## Canonical references
+
+- [introduction](https://docs.algovoi.co.uk/introduction)
+- [protocols-and-chains](https://docs.algovoi.co.uk/protocols-and-chains)
+- [x402](https://docs.algovoi.co.uk/protocols/x402)
+- [mpp](https://docs.algovoi.co.uk/protocols/mpp)
+- [ap2](https://docs.algovoi.co.uk/protocols/ap2)
+- [a2a](https://docs.algovoi.co.uk/protocols/a2a)
+- [solana-actions](https://docs.algovoi.co.uk/protocols/solana-actions)
+- [verify-a-receipt](https://docs.algovoi.co.uk/verify-a-receipt)
+- [compliance-duties](https://docs.algovoi.co.uk/compliance-duties)
+- [pay-rail](https://docs.algovoi.co.uk/algovoi-pay)
+- [buy-or-self-host](https://docs.algovoi.co.uk/buy-or-self-host)
+- [marketing-apex](https://algovoi.co.uk/)
+- [substrate](https://algovoi.co.uk/substrate.html)
+
+## Products
+
+- [.github](https://github.com/chopmob-cloud/.github): AlgoVoi organization profile
+- [AlgoVoi-A2A-Artifact](https://github.com/chopmob-cloud/AlgoVoi-A2A-Artifact): artifact_ref: a deterministic, content-addressed reference to an A2A Task output. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.
+- [AlgoVoi-A2A-Card](https://github.com/chopmob-cloud/AlgoVoi-A2A-Card): card_ref: a deterministic, content-addressed reference to an A2A AgentCard. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.
+- [algovoi-a2a-glink](https://github.com/chopmob-cloud/algovoi-a2a-glink): AlgoVoi gibberlink + A2A reference
+- [AlgoVoi-A2A-Task](https://github.com/chopmob-cloud/AlgoVoi-A2A-Task): task_ref: a deterministic, content-addressed reference to an A2A Task delegation. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.
+- [algovoi-atb](https://github.com/chopmob-cloud/algovoi-atb): AlgoVoi Agent Trust Bench client — run your AI agent through 166 adversarial x402 payment profiles and earn a Falcon-1024 signed reputation certificate.
+- [algovoi-audit-verifier](https://github.com/chopmob-cloud/algovoi-audit-verifier): Standalone reference verifier for AlgoVoi selective-disclosure audit bundles. Hosted at verify.algovoi.co.uk, or git-clone for offline auditor use. No AlgoVoi infrastructure trust required.
+- [algovoi-compliance-gate-a2a](https://github.com/chopmob-cloud/algovoi-compliance-gate-a2a): AlgoVoi product repository.
+- [algovoi-consensus-blocklist](https://github.com/chopmob-cloud/algovoi-consensus-blocklist): 4-of-N on-chain consensus wallet blocklist for Algorand and VOI (algopy ARC-4)
+- [algovoi-crest-joint-harness](https://github.com/chopmob-cloud/algovoi-crest-joint-harness): AlgoVoi x Crest joint conformance harness (joint-harness-v0). AlgoVoi-authored; Crest contributed a service-trust conformance vector.
+- [algovoi-delegation-ref](https://github.com/chopmob-cloud/algovoi-delegation-ref): Open, content-addressed delegation references for AlgoVoi Keystone: tamper-evident, chainable cross-party hand-offs with conformance vectors. Apache-2.0.
+- [algovoi-evidence-readers](https://github.com/chopmob-cloud/algovoi-evidence-readers): Two outside readers for Probity AI's evidence corpora: uncertain-effect (54/54) and request-effect-join (11/11), with the gates that show each check bites. Apache-2.0.
+- [algovoi-fabric](https://github.com/chopmob-cloud/algovoi-fabric): Security composition core for agentic commerce: tamper-evident, fail-closed, offline-verifiable keystone chains binding authority, policy, decision, execution and settlement. Apache-2.0.
+- [algovoi-jcs-conformance-vectors](https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors): Conformance vector sets for JCS RFC 8785 canonicalisation across x402, AP2, A2A, MPP receipt anchor sets. Cross-validated across ten independent JCS implementations in ten languages.
+- [algovoi-journey-ref](https://github.com/chopmob-cloud/algovoi-journey-ref): Open, content-addressed journey references for AlgoVoi Keystone: bind a whole multi-agent task (hops + delegations + outcome) into one offline-verifiable reference. Apache-2.0.
+- [algovoi-key-credential-binding](https://github.com/chopmob-cloud/algovoi-key-credential-binding): RFC 9421 key-to-credential binding: reference verifier and conformance vectors (Python + TypeScript)
+- [algovoi-keyhygiene-conformance](https://github.com/chopmob-cloud/algovoi-keyhygiene-conformance): Signed, cross-language conformance battery for RSA/EC public-key hygiene and primality soundness (the L0 key-soundness layer): 12-way byte-for-byte consensus over primality, RSA modulus hygiene, batch common-factor, EC key hygiene, and ROCA fingerprint.
+- [algovoi-keystone](https://github.com/chopmob-cloud/algovoi-keystone): The Keystone SDK (L2) on the AlgoVoi substrate (L1): build, govern, run and verify agent actions. Apache-2.0.
+- [algovoi-keystone-alias](https://github.com/chopmob-cloud/algovoi-keystone-alias): Keystone L2 alias layering over the RFC 8785 JCS substrate: resolve @aliases to concrete refs, then canonicalize. Offline-verifiable conformance twins (Python + Node).
+- [AlgoVoi-Keystone-Connectors](https://github.com/chopmob-cloud/AlgoVoi-Keystone-Connectors): AlgoVoi Keystone connectors: bind third-party SDK sends to a keystone decision (Apache-2.0)
+- [algovoi-keystone-sdk](https://github.com/chopmob-cloud/algovoi-keystone-sdk): Documentation for the AlgoVoi keystone: verifying agentic-action keystone chains and agent passports offline (RFC 8785 JCS + SHA-256).
+- [AlgoVoi-MCP-Server](https://github.com/chopmob-cloud/AlgoVoi-MCP-Server): MCP server exposing AlgoVoi payment tools to Claude Desktop, Claude Code, Cursor and Windsurf — npm + PyPI
+- [algovoi-multi-chain-wallet-auth](https://github.com/chopmob-cloud/algovoi-multi-chain-wallet-auth): Multi-chain wallet authentication primitives (EVM/Algorand/VOI/Solana/Stellar/Hedera/Tempo/ARC) — extracted from AlgoVoi production gateway in support of A2A #1737
+- [algovoi-pef](https://github.com/chopmob-cloud/algovoi-pef): Payment Evidence Frame (PEF) v1 -- AlgoVoi canonical wrapper for payment-lifecycle receipts
+- [algovoi-platform](https://github.com/chopmob-cloud/algovoi-platform): AlgoVoi Platform: payment rails, verifiable compliance estate and the post-quantum substrate they share. Free production use under BUSL-1.1; licence keys issued free.
+- [AlgoVoi-Platform-Adapters](https://github.com/chopmob-cloud/AlgoVoi-Platform-Adapters): AlgoVoi apps & adapters — ecommerce, marketplace, AI-agent, and no-code integrations for the AlgoVoi x402 multi-chain payment gateway. Apache-2.0.
+- [algovoi-probityai](https://github.com/chopmob-cloud/algovoi-probityai): Offline verifier and byte-pinned conformance vectors for the refund and receipt binding case. Apache-2.0.
+- [algovoi-receipt-sentinel](https://github.com/chopmob-cloud/algovoi-receipt-sentinel): Tenant-side monitoring layer: sliding-window attack/abuse pattern detection for receipt and webhook verification events
+- [algovoi-receipt-verifier](https://github.com/chopmob-cloud/algovoi-receipt-verifier): Cryptographic verifier for AlgoVoi JWS compliance receipts. Python + TypeScript. 13 cross-validation vectors (5 valid, 8 invalid). Apache-2.0.
+- [algovoi-recurr](https://github.com/chopmob-cloud/algovoi-recurr): AlgoVoi product repository.
+- [algovoi-reference-agent](https://github.com/chopmob-cloud/algovoi-reference-agent): Apache 2.0 reference implementation of an agent that emits an AlgoVoi settlement-attestation-v1 receipt for a Base chain transaction. Composes algovoi-substrate + algovoi-settlement-attestation. Byte-deterministic against algovoi-jcs-conformance-vectors.
+- [algovoi-reseal-verify](https://github.com/chopmob-cloud/algovoi-reseal-verify): Open, offline verifier for AlgoVoi Reseal: check post-quantum attestations and triage classical signatures. Don't trust the sealer, verify the bytes. Apache-2.0.
+- [algovoi-revocation-ref](https://github.com/chopmob-cloud/algovoi-revocation-ref): Open, content-addressed revocation references for AlgoVoi Keystone: tamper-evident, chainable revocation envelopes verified offline. Apache-2.0.
+- [algovoi-rfc9421-a2a](https://github.com/chopmob-cloud/algovoi-rfc9421-a2a): A2A per-message signing adapter binding the AlgoVoi RFC 9421 signer/verifier/keyid resolver to the A2A message envelope. Apache-2.0.
+- [algovoi-rfc9421-conformance](https://github.com/chopmob-cloud/algovoi-rfc9421-conformance): Signed, cross-language conformance battery for RFC 9421 HTTP Message Signatures (Python, TypeScript, Rust, Go), byte-for-byte.
+- [algovoi-rfc9421-ecdsa](https://github.com/chopmob-cloud/algovoi-rfc9421-ecdsa): Pure ECDSA (P-256/P-384) add-on for the AlgoVoi RFC 9421 verifier. Delegates Ed25519 to the unchanged verifier 0.4.2.
+- [algovoi-rfc9421-keyid](https://github.com/chopmob-cloud/algovoi-rfc9421-keyid): SSRF-guarded RFC 9421 keyid resolver (did:key / did:web / HTTPS) to Ed25519 public keys. Apache-2.0.
+- [algovoi-rfc9421-signer](https://github.com/chopmob-cloud/algovoi-rfc9421-signer): RFC 9421 HTTP Message Signatures + RFC 9530 Content-Digest signer (Ed25519) — Python + TypeScript
+- [algovoi-rfc9421-verifier](https://github.com/chopmob-cloud/algovoi-rfc9421-verifier): AlgoVoi RFC 9421 HTTP Message Signatures + RFC 9530 Content-Digest reference verifier (Python + TypeScript)
+- [algovoi-rfc9421-verifier-go](https://github.com/chopmob-cloud/algovoi-rfc9421-verifier-go): Go RFC 9421 verifier + independent ECDSA (P-256/P-384) add-on. Byte-parity with the AlgoVoi Python/TypeScript verifier. Apache-2.0.
+- [algovoi-rfc9421-verifier-rs](https://github.com/chopmob-cloud/algovoi-rfc9421-verifier-rs): Rust RFC 9421 verifier + independent ECDSA (P-256/P-384) add-on. Byte-parity with the AlgoVoi Python/TypeScript verifier. Apache-2.0.
+- [algovoi-secure-hub](https://github.com/chopmob-cloud/algovoi-secure-hub): Universal substrate-neutral AlgoVoi security and trust hub
+- [algovoi-substrate](https://github.com/chopmob-cloud/algovoi-substrate): AlgoVoi agentic-payments substrate -- JCS canonicalisation, action_ref, composite trust-query, compliance receipts, audit chain. Python + TypeScript reference implementations.
+- [algovoi-substrate-pqc](https://github.com/chopmob-cloud/algovoi-substrate-pqc): AlgoVoi substrate-author layer for JCS+PQC integration — signature_algorithm open-enum convention + cross-implementor byte-anchor convergence proof. Wraps PQClean (via pqcrypto), Anders Rundgren's rfc8785, and the Python Cryptographic Authority. AlgoVoi-authored substrate; underlying primitives credited per Apache-2.0 attribution.
+- [algovoi-ube](https://github.com/chopmob-cloud/algovoi-ube): Independent Apache-2.0 conformance harness for NTI-1, plus a Keystone coverage map
+- [algovoi-vcs](https://github.com/chopmob-cloud/algovoi-vcs): AlgoVoi Verifiable Compliance Suite — public documentation and addon interfaces (StorageBackend, Signer) for the Verifiable Archive engine
+- [algovoi-verify-it-yourself](https://github.com/chopmob-cloud/algovoi-verify-it-yourself): Don't trust AlgoVoi, verify us: 5-minute offline, post-quantum proof that AlgoVoi evidence is genuine and tamper-evident, with no AlgoVoi code in your trust base.
+- [algovoi-webhook-verifier](https://github.com/chopmob-cloud/algovoi-webhook-verifier): Cryptographic verifier for AlgoVoi webhook signatures (v1 HMAC-SHA256 + v2 HKDF-SHA256/HMAC-SHA384)
+- [ap2-pq-conformance](https://github.com/chopmob-cloud/ap2-pq-conformance): Joint canonical home for AP2 Post-Quantum cross-scheme conformance fixtures (AlgoVoi + PQSafe). One AP2 PaymentMandate canonical byte sequence, multiple signature primitives — ES256 + Ed25519 + Falcon-1024 (AlgoVoi) + ML-DSA-65 (PQSafe pending). Per AP2#250 lock-in.
+- [avm-ac2](https://github.com/chopmob-cloud/avm-ac2): AC2 consent bound to an avm-mesh settlement: proof of who authorised a transaction, on Algorand and Voi
+- [avm-algo-voi-bridge](https://github.com/chopmob-cloud/avm-algo-voi-bridge): Algorand to VOI Mainnet Bridge
+- [avm-algovoi-falcon](https://github.com/chopmob-cloud/avm-algovoi-falcon): Falcon-1024 (FIPS 206) keys and Algorand post-quantum accounts: keygen, deterministic sign/verify, falcon_verify LogicSig address derivation. Standalone, reproducible build from MIT sources.
+- [avm-effectproof](https://github.com/chopmob-cloud/avm-effectproof): AlgoVoi product repository.
+- [avm-hbar-bridge-relayer](https://github.com/chopmob-cloud/avm-hbar-bridge-relayer): Algorand ↔ Hedera treasury-model bridge relayer
+- [avm-mesh](https://github.com/chopmob-cloud/avm-mesh): Settlement receipts for the Algorand and Voi mesh: third-party-checkable proof that an on-chain transfer happened, argued from state proofs against an anchor you pin yourself. Two chains, zero third-party runtime dependencies.
+- [avm-proofpack](https://github.com/chopmob-cloud/avm-proofpack): Portable, offline-verifiable transaction evidence for Algorand and Voi, anchored in state proofs
+- [avm-proofpack-ts](https://github.com/chopmob-cloud/avm-proofpack-ts): AlgoVoi product repository.
+- [avm-voi-algo-bridge](https://github.com/chopmob-cloud/avm-voi-algo-bridge): VOI to Algorand Mainnet Bridge
+- [avm-wormhole-ntt-relayer](https://github.com/chopmob-cloud/avm-wormhole-ntt-relayer): Wormhole NTT relayer — Algorand ↔ Base
+- [chopmob-cloud](https://github.com/chopmob-cloud/chopmob-cloud): The open substrate for agentic payments. Built so others could use it.
+- [chopmob-cloud.github.io](https://github.com/chopmob-cloud/chopmob-cloud.github.io): AlgoVoi substrate hub
+- [Content](https://github.com/chopmob-cloud/Content): AlgoVoi product repository.
+- [elizaos-plugin-algovoi](https://github.com/chopmob-cloud/elizaos-plugin-algovoi): Multi-chain agent-to-agent (A2A) crypto payments for ElizaOS — Algorand, VOI, Hedera, Stellar, Base, Solana, Tempo via the AlgoVoi A2A gateway.
+- [substrate-comparisons](https://github.com/chopmob-cloud/substrate-comparisons): A reproducible comparison of substrate methods for agentic-payment records. Names no implementation; the bytes decide.
+- [use-wallet-algovoi](https://github.com/chopmob-cloud/use-wallet-algovoi): AlgoVoi wallet adapter for @txnlab/use-wallet v5

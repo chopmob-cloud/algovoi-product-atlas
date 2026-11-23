@@ -164,6 +164,8 @@ def main():
     write_elements(records)
     write_products(records)
     write_overlap(records)
+    write_llms(records)
+    write_canonical()
     json.dump({"generated": STAMP, "source": "gh repo list chopmob-cloud",
                "products": records,
                "elements":[{"slug":s,"title":t,"spec":d} for s,t,d in ELEMENTS]},
@@ -192,6 +194,9 @@ def write_readme(records):
         "2. **Products × key elements** — [`overlap.md`](overlap.md) is the matrix: which shared elements each product implements or depends on.",
         "",
         "Each key element also has its own page under [`elements/`](elements/) listing the products that touch it.",
+        "",
+        "See also: [`docs-strategy.md`](docs-strategy.md) — the consolidated GitHub × docs.algovoi.co.uk AEO/SEO approach ·",
+        "[`llms.txt`](llms.txt) — answer-engine ingest · [`data/canonical-urls.json`](data/canonical-urls.json) — canonical URL registry.",
         "",
         "## The stack",
         "",
@@ -277,6 +282,55 @@ def write_overlap(records):
         L.append(f"| [{t}](elements/{s}.md) | {sum(1 for r in records if s in r['elements'])} |")
     L+=["","[← Back to the atlas](README.md)",""]
     open(os.path.join(ROOT,"overlap.md"),"w",encoding="utf-8").write("\n".join(L))
+
+# Canonical URL registry — topic -> the ONE canonical URL (grounded in the live
+# docs.algovoi.co.uk/llms.txt and apex, probed 2026-11-23). READMEs/atlas/apex
+# footers link from this registry so links never drift. See docs-strategy.md.
+CANONICAL = {
+    "introduction": "https://docs.algovoi.co.uk/introduction",
+    "protocols-and-chains": "https://docs.algovoi.co.uk/protocols-and-chains",
+    "x402": "https://docs.algovoi.co.uk/protocols/x402",
+    "mpp": "https://docs.algovoi.co.uk/protocols/mpp",
+    "ap2": "https://docs.algovoi.co.uk/protocols/ap2",
+    "a2a": "https://docs.algovoi.co.uk/protocols/a2a",
+    "solana-actions": "https://docs.algovoi.co.uk/protocols/solana-actions",
+    "verify-a-receipt": "https://docs.algovoi.co.uk/verify-a-receipt",
+    "compliance-duties": "https://docs.algovoi.co.uk/compliance-duties",
+    "pay-rail": "https://docs.algovoi.co.uk/algovoi-pay",
+    "buy-or-self-host": "https://docs.algovoi.co.uk/buy-or-self-host",
+    "marketing-apex": "https://algovoi.co.uk/",
+    "substrate": "https://algovoi.co.uk/substrate.html",
+    "product-atlas": "https://github.com/chopmob-cloud/algovoi-product-atlas",
+}
+
+def write_canonical():
+    json.dump({"generated": STAMP, "note": "topic -> canonical URL; link from here, do not duplicate content",
+               "canonical": CANONICAL},
+              open(os.path.join(ROOT,"data","canonical-urls.json"),"w",encoding="utf-8"),
+              indent=2, ensure_ascii=False)
+
+def write_llms(records):
+    # Answer-engine ingest file (llms.txt convention). Answer-first one-liners.
+    base="https://github.com/chopmob-cloud/algovoi-product-atlas/blob/master"
+    L=["# AlgoVoi Product Atlas","",
+       "> Documentation-only map of every public AlgoVoi product and how each overlaps the key "
+       "architectural elements. Generated from the live GitHub inventory. No sellable code.","",
+       "## Docs",
+       f"- [Product catalogue]({base}/products.md): every public AlgoVoi repo grouped by architectural layer, with descriptions and element tags.",
+       f"- [Overlap matrix]({base}/overlap.md): which of the 12 key elements each product implements or depends on.",
+       f"- [Consolidated docs approach]({base}/docs-strategy.md): how GitHub and docs.algovoi.co.uk fit together, AEO/SEO-friendly.",
+       "","## Key elements"]
+    for s,t,d in ELEMENTS:
+        L.append(f"- [{t}]({base}/elements/{s}.md): {d.split('. ')[0].rstrip('.')}.")
+    L+=["","## Canonical references",""]
+    for k,u in CANONICAL.items():
+        if u.startswith("https://docs.algovoi.co.uk") or u.startswith("https://algovoi.co.uk"):
+            L.append(f"- [{k}]({u})")
+    L+=["","## Products",""]
+    for r in sorted(records,key=lambda x:x["name"].lower()):
+        desc=r["desc"] or "AlgoVoi product repository."
+        L.append(f"- [{r['name']}]({r['url']}): {desc}")
+    open(os.path.join(ROOT,"llms.txt"),"w",encoding="utf-8").write("\n".join(L)+"\n")
 
 if __name__=="__main__":
     main()
