@@ -1,5 +1,8 @@
 # AlgoVoi Product Atlas
 
+
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
+
 > Documentation-only map of **every public AlgoVoi product** (65 repos) and how each overlaps the
 > key architectural elements. Generated from the live GitHub inventory on 2026-11-23.
 > **No sellable code lives here** — this is the documentation layer over the estate.
