@@ -1,6 +1,5 @@
 # AlgoVoi Product Atlas
 
-
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
 > Documentation-only map of **every public AlgoVoi product** (65 repos) and how each overlaps the
