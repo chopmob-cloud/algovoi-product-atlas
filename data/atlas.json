@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-23",
+  "generated": "2026-11-26",
   "source": "gh repo list chopmob-cloud",
   "products": [
     {
       "name": ".github",
       "url": "https://github.com/chopmob-cloud/.github",
       "lang": "—",
-      "pushed": "2026-08-26",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi organization profile",
       "layer": "meta",
       "elements": []
@@ -15,7 +15,7 @@
       "name": "AlgoVoi-A2A-Artifact",
       "url": "https://github.com/chopmob-cloud/AlgoVoi-A2A-Artifact",
       "lang": "Python",
-      "pushed": "2026-07-08",
+      "pushed": "2026-11-24",
       "desc": "artifact_ref: a deterministic, content-addressed reference to an A2A Task output. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -28,7 +28,7 @@
       "name": "AlgoVoi-A2A-Card",
       "url": "https://github.com/chopmob-cloud/AlgoVoi-A2A-Card",
       "lang": "Python",
-      "pushed": "2026-07-08",
+      "pushed": "2026-11-24",
       "desc": "card_ref: a deterministic, content-addressed reference to an A2A AgentCard. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -41,7 +41,7 @@
       "name": "algovoi-a2a-glink",
       "url": "https://github.com/chopmob-cloud/algovoi-a2a-glink",
       "lang": "Python",
-      "pushed": "2026-10-27",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi gibberlink + A2A reference",
       "layer": "protocols",
       "elements": [
@@ -52,7 +52,7 @@
       "name": "AlgoVoi-A2A-Task",
       "url": "https://github.com/chopmob-cloud/AlgoVoi-A2A-Task",
       "lang": "Python",
-      "pushed": "2026-07-08",
+      "pushed": "2026-11-24",
       "desc": "task_ref: a deterministic, content-addressed reference to an A2A Task delegation. RFC 8785 JCS + SHA-256, no JWS or JWKS. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -62,10 +62,44 @@
       ]
     },
     {
+      "name": "algovoi-advisories",
+      "url": "https://github.com/chopmob-cloud/algovoi-advisories",
+      "lang": "—",
+      "pushed": "2026-11-25",
+      "desc": "Public security advisories for AlgoVoi software and services",
+      "layer": "meta",
+      "elements": []
+    },
+    {
+      "name": "algovoi-agent-guard",
+      "url": "https://github.com/chopmob-cloud/algovoi-agent-guard",
+      "lang": "Python",
+      "pushed": "2026-11-26",
+      "desc": "The budget your agent can't raise: human-signed spend mandates with offline-verifiable receipts, plus a pluggable AI/human/file/fuzz red team.",
+      "layer": "meta",
+      "elements": [
+        "receipts",
+        "verify"
+      ]
+    },
+    {
+      "name": "algovoi-agent-guard-ts",
+      "url": "https://github.com/chopmob-cloud/algovoi-agent-guard-ts",
+      "lang": "TypeScript",
+      "pushed": "2026-11-26",
+      "desc": "The budget your agent can't raise - human-signed spend mandates with offline-verifiable receipts. TypeScript port, byte-conformant with the frozen L1 conformance vectors and the Python reference.",
+      "layer": "meta",
+      "elements": [
+        "receipts",
+        "conformance",
+        "verify"
+      ]
+    },
+    {
       "name": "algovoi-atb",
       "url": "https://github.com/chopmob-cloud/algovoi-atb",
       "lang": "Python",
-      "pushed": "2026-06-09",
+      "pushed": "2026-11-23",
       "desc": "AlgoVoi Agent Trust Bench client — run your AI agent through 166 adversarial x402 payment profiles and earn a Falcon-1024 signed reputation certificate.",
       "layer": "protocols",
       "elements": [
@@ -90,10 +124,11 @@
       "name": "algovoi-compliance-gate-a2a",
       "url": "https://github.com/chopmob-cloud/algovoi-compliance-gate-a2a",
       "lang": "Python",
-      "pushed": "2026-09-21",
-      "desc": "",
+      "pushed": "2026-11-24",
+      "desc": "Open, A2A-interoperable AlgoVoi Compliance Gate: a no-PII, geo-bound seven-field Compliance Receipt mapped to A2A Payment and Cart Mandate primitives. Receipt format and method, Apache-2.0.",
       "layer": "protocols",
       "elements": [
+        "receipts",
         "protocols"
       ]
     },
@@ -101,7 +136,7 @@
       "name": "algovoi-consensus-blocklist",
       "url": "https://github.com/chopmob-cloud/algovoi-consensus-blocklist",
       "lang": "Python",
-      "pushed": "2026-06-03",
+      "pushed": "2026-11-24",
       "desc": "4-of-N on-chain consensus wallet blocklist for Algorand and VOI (algopy ARC-4)",
       "layer": "settlement",
       "elements": [
@@ -112,7 +147,7 @@
       "name": "algovoi-crest-joint-harness",
       "url": "https://github.com/chopmob-cloud/algovoi-crest-joint-harness",
       "lang": "Python",
-      "pushed": "2026-06-01",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi x Crest joint conformance harness (joint-harness-v0). AlgoVoi-authored; Crest contributed a service-trust conformance vector.",
       "layer": "conform",
       "elements": [
@@ -123,7 +158,7 @@
       "name": "algovoi-delegation-ref",
       "url": "https://github.com/chopmob-cloud/algovoi-delegation-ref",
       "lang": "Python",
-      "pushed": "2026-09-20",
+      "pushed": "2026-11-24",
       "desc": "Open, content-addressed delegation references for AlgoVoi Keystone: tamper-evident, chainable cross-party hand-offs with conformance vectors. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -137,7 +172,7 @@
       "name": "algovoi-evidence-readers",
       "url": "https://github.com/chopmob-cloud/algovoi-evidence-readers",
       "lang": "Python",
-      "pushed": "2026-11-20",
+      "pushed": "2026-11-24",
       "desc": "Two outside readers for Probity AI's evidence corpora: uncertain-effect (54/54) and request-effect-join (11/11), with the gates that show each check bites. Apache-2.0.",
       "layer": "verify",
       "elements": [
@@ -149,7 +184,7 @@
       "name": "algovoi-fabric",
       "url": "https://github.com/chopmob-cloud/algovoi-fabric",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "Security composition core for agentic commerce: tamper-evident, fail-closed, offline-verifiable keystone chains binding authority, policy, decision, execution and settlement. Apache-2.0.",
       "layer": "keystone",
       "elements": [
@@ -168,7 +203,7 @@
       "name": "algovoi-jcs-conformance-vectors",
       "url": "https://github.com/chopmob-cloud/algovoi-jcs-conformance-vectors",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "Conformance vector sets for JCS RFC 8785 canonicalisation across x402, AP2, A2A, MPP receipt anchor sets. Cross-validated across ten independent JCS implementations in ten languages.",
       "layer": "conform",
       "elements": [
@@ -181,7 +216,7 @@
       "name": "algovoi-journey-ref",
       "url": "https://github.com/chopmob-cloud/algovoi-journey-ref",
       "lang": "Python",
-      "pushed": "2026-09-20",
+      "pushed": "2026-11-24",
       "desc": "Open, content-addressed journey references for AlgoVoi Keystone: bind a whole multi-agent task (hops + delegations + outcome) into one offline-verifiable reference. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -195,7 +230,7 @@
       "name": "algovoi-key-credential-binding",
       "url": "https://github.com/chopmob-cloud/algovoi-key-credential-binding",
       "lang": "Python",
-      "pushed": "2026-08-08",
+      "pushed": "2026-11-24",
       "desc": "RFC 9421 key-to-credential binding: reference verifier and conformance vectors (Python + TypeScript)",
       "layer": "signing",
       "elements": [
@@ -209,7 +244,7 @@
       "name": "algovoi-keyhygiene-conformance",
       "url": "https://github.com/chopmob-cloud/algovoi-keyhygiene-conformance",
       "lang": "Python",
-      "pushed": "2026-08-12",
+      "pushed": "2026-11-24",
       "desc": "Signed, cross-language conformance battery for RSA/EC public-key hygiene and primality soundness (the L0 key-soundness layer): 12-way byte-for-byte consensus over primality, RSA modulus hygiene, batch common-factor, EC key hygiene, and ROCA fingerprint.",
       "layer": "substrate",
       "elements": [
@@ -221,7 +256,7 @@
       "name": "algovoi-keystone",
       "url": "https://github.com/chopmob-cloud/algovoi-keystone",
       "lang": "Python",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "The Keystone SDK (L2) on the AlgoVoi substrate (L1): build, govern, run and verify agent actions. Apache-2.0.",
       "layer": "keystone",
       "elements": [
@@ -235,7 +270,7 @@
       "name": "algovoi-keystone-alias",
       "url": "https://github.com/chopmob-cloud/algovoi-keystone-alias",
       "lang": "Python",
-      "pushed": "2026-08-04",
+      "pushed": "2026-11-24",
       "desc": "Keystone L2 alias layering over the RFC 8785 JCS substrate: resolve @aliases to concrete refs, then canonicalize. Offline-verifiable conformance twins (Python + Node).",
       "layer": "keystone",
       "elements": [
@@ -249,7 +284,7 @@
       "name": "AlgoVoi-Keystone-Connectors",
       "url": "https://github.com/chopmob-cloud/AlgoVoi-Keystone-Connectors",
       "lang": "Python",
-      "pushed": "2026-11-21",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi Keystone connectors: bind third-party SDK sends to a keystone decision (Apache-2.0)",
       "layer": "keystone",
       "elements": [
@@ -260,7 +295,7 @@
       "name": "algovoi-keystone-sdk",
       "url": "https://github.com/chopmob-cloud/algovoi-keystone-sdk",
       "lang": "—",
-      "pushed": "2026-08-15",
+      "pushed": "2026-11-24",
       "desc": "Documentation for the AlgoVoi keystone: verifying agentic-action keystone chains and agent passports offline (RFC 8785 JCS + SHA-256).",
       "layer": "meta",
       "elements": [
@@ -286,7 +321,7 @@
       "name": "algovoi-multi-chain-wallet-auth",
       "url": "https://github.com/chopmob-cloud/algovoi-multi-chain-wallet-auth",
       "lang": "Python",
-      "pushed": "2026-06-01",
+      "pushed": "2026-11-24",
       "desc": "Multi-chain wallet authentication primitives (EVM/Algorand/VOI/Solana/Stellar/Hedera/Tempo/ARC) — extracted from AlgoVoi production gateway in support of A2A #1737",
       "layer": "settlement",
       "elements": [
@@ -299,7 +334,7 @@
       "name": "algovoi-pef",
       "url": "https://github.com/chopmob-cloud/algovoi-pef",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "Payment Evidence Frame (PEF) v1 -- AlgoVoi canonical wrapper for payment-lifecycle receipts",
       "layer": "refs",
       "elements": [
@@ -313,7 +348,7 @@
       "name": "algovoi-platform",
       "url": "https://github.com/chopmob-cloud/algovoi-platform",
       "lang": "Python",
-      "pushed": "2026-11-18",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi Platform: payment rails, verifiable compliance estate and the post-quantum substrate they share. Free production use under BUSL-1.1; licence keys issued free.",
       "layer": "platform",
       "elements": [
@@ -340,7 +375,7 @@
       "name": "algovoi-probityai",
       "url": "https://github.com/chopmob-cloud/algovoi-probityai",
       "lang": "Python",
-      "pushed": "2026-11-01",
+      "pushed": "2026-11-24",
       "desc": "Offline verifier and byte-pinned conformance vectors for the refund and receipt binding case. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -350,10 +385,28 @@
       ]
     },
     {
+      "name": "algovoi-product-atlas",
+      "url": "https://github.com/chopmob-cloud/algovoi-product-atlas",
+      "lang": "Python",
+      "pushed": "2026-11-24",
+      "desc": "Documentation-only atlas of every public AlgoVoi product and how each overlaps the key architectural elements (JCS, RFC 9421, PQC, receipts, Keystone/Fabric, conformance, verification, settlement, protocols, gateway).",
+      "layer": "meta",
+      "elements": [
+        "jcs",
+        "rfc9421",
+        "pqc",
+        "receipts",
+        "keystone",
+        "conformance",
+        "verify",
+        "gateway"
+      ]
+    },
+    {
       "name": "algovoi-receipt-sentinel",
       "url": "https://github.com/chopmob-cloud/algovoi-receipt-sentinel",
       "lang": "Python",
-      "pushed": "2026-06-09",
+      "pushed": "2026-11-24",
       "desc": "Tenant-side monitoring layer: sliding-window attack/abuse pattern detection for receipt and webhook verification events",
       "layer": "refs",
       "elements": [
@@ -365,7 +418,7 @@
       "name": "algovoi-receipt-verifier",
       "url": "https://github.com/chopmob-cloud/algovoi-receipt-verifier",
       "lang": "Python",
-      "pushed": "2026-07-01",
+      "pushed": "2026-11-24",
       "desc": "Cryptographic verifier for AlgoVoi JWS compliance receipts. Python + TypeScript. 13 cross-validation vectors (5 valid, 8 invalid). Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -378,8 +431,8 @@
       "name": "algovoi-recurr",
       "url": "https://github.com/chopmob-cloud/algovoi-recurr",
       "lang": "Python",
-      "pushed": "2026-11-01",
-      "desc": "",
+      "pushed": "2026-11-24",
+      "desc": "Open format and method for AlgoVoi Recurr Tier 2 standing authorities: a recurring, capped, revocable on-chain payment authorisation, signed, disclosed and revoked. Apache-2.0, Python and Node.",
       "layer": "protocols",
       "elements": [
         "receipts",
@@ -390,7 +443,7 @@
       "name": "algovoi-reference-agent",
       "url": "https://github.com/chopmob-cloud/algovoi-reference-agent",
       "lang": "Python",
-      "pushed": "2026-06-09",
+      "pushed": "2026-11-24",
       "desc": "Apache 2.0 reference implementation of an agent that emits an AlgoVoi settlement-attestation-v1 receipt for a Base chain transaction. Composes algovoi-substrate + algovoi-settlement-attestation. Byte-deterministic against algovoi-jcs-conformance-vectors.",
       "layer": "protocols",
       "elements": [
@@ -403,7 +456,7 @@
       "name": "algovoi-reseal-verify",
       "url": "https://github.com/chopmob-cloud/algovoi-reseal-verify",
       "lang": "Python",
-      "pushed": "2026-08-10",
+      "pushed": "2026-11-24",
       "desc": "Open, offline verifier for AlgoVoi Reseal: check post-quantum attestations and triage classical signatures. Don't trust the sealer, verify the bytes. Apache-2.0.",
       "layer": "verify",
       "elements": [
@@ -416,7 +469,7 @@
       "name": "algovoi-revocation-ref",
       "url": "https://github.com/chopmob-cloud/algovoi-revocation-ref",
       "lang": "Python",
-      "pushed": "2026-09-20",
+      "pushed": "2026-11-24",
       "desc": "Open, content-addressed revocation references for AlgoVoi Keystone: tamper-evident, chainable revocation envelopes verified offline. Apache-2.0.",
       "layer": "refs",
       "elements": [
@@ -429,7 +482,7 @@
       "name": "algovoi-rfc9421-a2a",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-a2a",
       "lang": "Python",
-      "pushed": "2026-08-08",
+      "pushed": "2026-11-24",
       "desc": "A2A per-message signing adapter binding the AlgoVoi RFC 9421 signer/verifier/keyid resolver to the A2A message envelope. Apache-2.0.",
       "layer": "signing",
       "elements": [
@@ -444,7 +497,7 @@
       "name": "algovoi-rfc9421-conformance",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-conformance",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "Signed, cross-language conformance battery for RFC 9421 HTTP Message Signatures (Python, TypeScript, Rust, Go), byte-for-byte.",
       "layer": "conform",
       "elements": [
@@ -456,7 +509,7 @@
       "name": "algovoi-rfc9421-ecdsa",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-ecdsa",
       "lang": "Python",
-      "pushed": "2026-08-09",
+      "pushed": "2026-11-24",
       "desc": "Pure ECDSA (P-256/P-384) add-on for the AlgoVoi RFC 9421 verifier. Delegates Ed25519 to the unchanged verifier 0.4.2.",
       "layer": "signing",
       "elements": [
@@ -468,7 +521,7 @@
       "name": "algovoi-rfc9421-keyid",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-keyid",
       "lang": "Python",
-      "pushed": "2026-08-08",
+      "pushed": "2026-11-24",
       "desc": "SSRF-guarded RFC 9421 keyid resolver (did:key / did:web / HTTPS) to Ed25519 public keys. Apache-2.0.",
       "layer": "signing",
       "elements": [
@@ -480,7 +533,7 @@
       "name": "algovoi-rfc9421-signer",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-signer",
       "lang": "Python",
-      "pushed": "2026-08-02",
+      "pushed": "2026-11-24",
       "desc": "RFC 9421 HTTP Message Signatures + RFC 9530 Content-Digest signer (Ed25519) — Python + TypeScript",
       "layer": "signing",
       "elements": [
@@ -491,7 +544,7 @@
       "name": "algovoi-rfc9421-verifier",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-verifier",
       "lang": "TypeScript",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi RFC 9421 HTTP Message Signatures + RFC 9530 Content-Digest reference verifier (Python + TypeScript)",
       "layer": "signing",
       "elements": [
@@ -503,7 +556,7 @@
       "name": "algovoi-rfc9421-verifier-go",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-verifier-go",
       "lang": "Go",
-      "pushed": "2026-08-12",
+      "pushed": "2026-11-24",
       "desc": "Go RFC 9421 verifier + independent ECDSA (P-256/P-384) add-on. Byte-parity with the AlgoVoi Python/TypeScript verifier. Apache-2.0.",
       "layer": "signing",
       "elements": [
@@ -516,7 +569,7 @@
       "name": "algovoi-rfc9421-verifier-rs",
       "url": "https://github.com/chopmob-cloud/algovoi-rfc9421-verifier-rs",
       "lang": "Rust",
-      "pushed": "2026-08-12",
+      "pushed": "2026-11-24",
       "desc": "Rust RFC 9421 verifier + independent ECDSA (P-256/P-384) add-on. Byte-parity with the AlgoVoi Python/TypeScript verifier. Apache-2.0.",
       "layer": "signing",
       "elements": [
@@ -529,7 +582,7 @@
       "name": "algovoi-secure-hub",
       "url": "https://github.com/chopmob-cloud/algovoi-secure-hub",
       "lang": "Python",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "Universal substrate-neutral AlgoVoi security and trust hub",
       "layer": "platform",
       "elements": [
@@ -540,7 +593,7 @@
       "name": "algovoi-substrate",
       "url": "https://github.com/chopmob-cloud/algovoi-substrate",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi agentic-payments substrate -- JCS canonicalisation, action_ref, composite trust-query, compliance receipts, audit chain. Python + TypeScript reference implementations.",
       "layer": "substrate",
       "elements": [
@@ -554,7 +607,7 @@
       "name": "algovoi-substrate-pqc",
       "url": "https://github.com/chopmob-cloud/algovoi-substrate-pqc",
       "lang": "Python",
-      "pushed": "2026-11-22",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi substrate-author layer for JCS+PQC integration — signature_algorithm open-enum convention + cross-implementor byte-anchor convergence proof. Wraps PQClean (via pqcrypto), Anders Rundgren's rfc8785, and the Python Cryptographic Authority. AlgoVoi-authored substrate; underlying primitives credited per Apache-2.0 attribution.",
       "layer": "substrate",
       "elements": [
@@ -567,7 +620,7 @@
       "name": "algovoi-ube",
       "url": "https://github.com/chopmob-cloud/algovoi-ube",
       "lang": "Python",
-      "pushed": "2026-11-03",
+      "pushed": "2026-11-24",
       "desc": "Independent Apache-2.0 conformance harness for NTI-1, plus a Keystone coverage map",
       "layer": "conform",
       "elements": [
@@ -579,7 +632,7 @@
       "name": "algovoi-vcs",
       "url": "https://github.com/chopmob-cloud/algovoi-vcs",
       "lang": "Python",
-      "pushed": "2026-11-17",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi Verifiable Compliance Suite — public documentation and addon interfaces (StorageBackend, Signer) for the Verifiable Archive engine",
       "layer": "verify",
       "elements": [
@@ -592,7 +645,7 @@
       "name": "algovoi-verify-it-yourself",
       "url": "https://github.com/chopmob-cloud/algovoi-verify-it-yourself",
       "lang": "Python",
-      "pushed": "2026-07-24",
+      "pushed": "2026-11-24",
       "desc": "Don't trust AlgoVoi, verify us: 5-minute offline, post-quantum proof that AlgoVoi evidence is genuine and tamper-evident, with no AlgoVoi code in your trust base.",
       "layer": "verify",
       "elements": [
@@ -615,7 +668,7 @@
       "name": "ap2-pq-conformance",
       "url": "https://github.com/chopmob-cloud/ap2-pq-conformance",
       "lang": "Python",
-      "pushed": "2026-06-01",
+      "pushed": "2026-11-24",
       "desc": "Joint canonical home for AP2 Post-Quantum cross-scheme conformance fixtures (AlgoVoi + PQSafe). One AP2 PaymentMandate canonical byte sequence, multiple signature primitives — ES256 + Ed25519 + Falcon-1024 (AlgoVoi) + ML-DSA-65 (PQSafe pending). Per AP2#250 lock-in.",
       "layer": "conform",
       "elements": [
@@ -629,7 +682,7 @@
       "name": "avm-ac2",
       "url": "https://github.com/chopmob-cloud/avm-ac2",
       "lang": "Python",
-      "pushed": "2026-11-17",
+      "pushed": "2026-11-24",
       "desc": "AC2 consent bound to an avm-mesh settlement: proof of who authorised a transaction, on Algorand and Voi",
       "layer": "settlement",
       "elements": [
@@ -642,7 +695,7 @@
       "name": "avm-algo-voi-bridge",
       "url": "https://github.com/chopmob-cloud/avm-algo-voi-bridge",
       "lang": "—",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "Algorand to VOI Mainnet Bridge",
       "layer": "settlement",
       "elements": [
@@ -653,7 +706,7 @@
       "name": "avm-algovoi-falcon",
       "url": "https://github.com/chopmob-cloud/avm-algovoi-falcon",
       "lang": "C",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "Falcon-1024 (FIPS 206) keys and Algorand post-quantum accounts: keygen, deterministic sign/verify, falcon_verify LogicSig address derivation. Standalone, reproducible build from MIT sources.",
       "layer": "settlement",
       "elements": [
@@ -666,8 +719,8 @@
       "name": "avm-effectproof",
       "url": "https://github.com/chopmob-cloud/avm-effectproof",
       "lang": "Python",
-      "pushed": "2026-10-30",
-      "desc": "",
+      "pushed": "2026-11-24",
+      "desc": "Application-effect proofs for Algorand and Voi: read what a transaction actually did (inner transactions, logs, global and local state) from a proven SignedTxnInBlock. One implementation, both chains.",
       "layer": "settlement",
       "elements": [
         "verify",
@@ -678,7 +731,7 @@
       "name": "avm-hbar-bridge-relayer",
       "url": "https://github.com/chopmob-cloud/avm-hbar-bridge-relayer",
       "lang": "Python",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "Algorand ↔ Hedera treasury-model bridge relayer",
       "layer": "settlement",
       "elements": [
@@ -689,7 +742,7 @@
       "name": "avm-mesh",
       "url": "https://github.com/chopmob-cloud/avm-mesh",
       "lang": "Python",
-      "pushed": "2026-11-17",
+      "pushed": "2026-11-24",
       "desc": "Settlement receipts for the Algorand and Voi mesh: third-party-checkable proof that an on-chain transfer happened, argued from state proofs against an anchor you pin yourself. Two chains, zero third-party runtime dependencies.",
       "layer": "settlement",
       "elements": [
@@ -702,7 +755,7 @@
       "name": "avm-proofpack",
       "url": "https://github.com/chopmob-cloud/avm-proofpack",
       "lang": "Python",
-      "pushed": "2026-10-30",
+      "pushed": "2026-11-24",
       "desc": "Portable, offline-verifiable transaction evidence for Algorand and Voi, anchored in state proofs",
       "layer": "settlement",
       "elements": [
@@ -714,10 +767,12 @@
       "name": "avm-proofpack-ts",
       "url": "https://github.com/chopmob-cloud/avm-proofpack-ts",
       "lang": "TypeScript",
-      "pushed": "2026-10-30",
-      "desc": "",
+      "pushed": "2026-11-24",
+      "desc": "Offline Algorand and Voi consensus verification primitives in TypeScript. Zero dependencies, no build step; byte-for-byte compatible with avm-proofpack (Python) on mainnet data from both chains.",
       "layer": "settlement",
       "elements": [
+        "conformance",
+        "verify",
         "settlement"
       ]
     },
@@ -725,7 +780,7 @@
       "name": "avm-voi-algo-bridge",
       "url": "https://github.com/chopmob-cloud/avm-voi-algo-bridge",
       "lang": "Python",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "VOI to Algorand Mainnet Bridge",
       "layer": "settlement",
       "elements": [
@@ -736,7 +791,7 @@
       "name": "avm-wormhole-ntt-relayer",
       "url": "https://github.com/chopmob-cloud/avm-wormhole-ntt-relayer",
       "lang": "Python",
-      "pushed": "2026-10-29",
+      "pushed": "2026-11-24",
       "desc": "Wormhole NTT relayer — Algorand ↔ Base",
       "layer": "settlement",
       "elements": [
@@ -747,7 +802,7 @@
       "name": "chopmob-cloud",
       "url": "https://github.com/chopmob-cloud/chopmob-cloud",
       "lang": "HTML",
-      "pushed": "2026-11-15",
+      "pushed": "2026-11-24",
       "desc": "The open substrate for agentic payments. Built so others could use it.",
       "layer": "meta",
       "elements": []
@@ -762,19 +817,10 @@
       "elements": []
     },
     {
-      "name": "Content",
-      "url": "https://github.com/chopmob-cloud/Content",
-      "lang": "—",
-      "pushed": "2026-04-04",
-      "desc": "",
-      "layer": "meta",
-      "elements": []
-    },
-    {
       "name": "elizaos-plugin-algovoi",
       "url": "https://github.com/chopmob-cloud/elizaos-plugin-algovoi",
       "lang": "TypeScript",
-      "pushed": "2026-06-02",
+      "pushed": "2026-11-24",
       "desc": "Multi-chain agent-to-agent (A2A) crypto payments for ElizaOS — Algorand, VOI, Hedera, Stellar, Base, Solana, Tempo via the AlgoVoi A2A gateway.",
       "layer": "protocols",
       "elements": [
@@ -786,7 +832,7 @@
       "name": "substrate-comparisons",
       "url": "https://github.com/chopmob-cloud/substrate-comparisons",
       "lang": "Python",
-      "pushed": "2026-08-04",
+      "pushed": "2026-11-24",
       "desc": "A reproducible comparison of substrate methods for agentic-payment records. Names no implementation; the bytes decide.",
       "layer": "substrate",
       "elements": [
@@ -798,7 +844,7 @@
       "name": "use-wallet-algovoi",
       "url": "https://github.com/chopmob-cloud/use-wallet-algovoi",
       "lang": "TypeScript",
-      "pushed": "2026-08-07",
+      "pushed": "2026-11-24",
       "desc": "AlgoVoi wallet adapter for @txnlab/use-wallet v5",
       "layer": "protocols",
       "elements": [
@@ -840,7 +886,7 @@
     {
       "slug": "conformance",
       "title": "Cross-language conformance / cross-validation",
-      "spec": "Signed, byte-for-byte conformance batteries across independent implementations (the 10-language moat). A planted mutant must fail; the bytes decide, not the prose."
+      "spec": "Signed, byte-for-byte conformance batteries across independent implementations. A planted mutant must fail; the bytes decide, not the prose."
     },
     {
       "slug": "verify",

@@ -17,9 +17,9 @@ import json, os, datetime, collections
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SNAP = os.path.join(ROOT, "data", "repos.snapshot.json")
-STAMP = "2026-11-23"
+STAMP = datetime.date.today().isoformat()
 
-# --- The key architectural elements (the shared spine / moat) ---------------
+# --- The key architectural elements (the shared spine) -----------------------
 ELEMENTS = [
     ("jcs",        "JCS canonicalisation (RFC 8785)",
      "RFC 8785 JSON Canonicalization Scheme. One deterministic byte form for a JSON object, so two parties hash the same thing. The base every reference and receipt binds to."),
@@ -34,7 +34,7 @@ ELEMENTS = [
     ("keystone",   "Keystone composition (L2) / Fabric spine",
      "The Keystone SDK and the algovoi-fabric composition spine: bind authority -> policy -> decision -> delegation -> outcome into one tamper-evident, fail-closed chain."),
     ("conformance","Cross-language conformance / cross-validation",
-     "Signed, byte-for-byte conformance batteries across independent implementations (the 10-language moat). A planted mutant must fail; the bytes decide, not the prose."),
+     "Signed, byte-for-byte conformance batteries across independent implementations. A planted mutant must fail; the bytes decide, not the prose."),
     ("verify",     "Offline third-party verification / audit",
      "Standalone verifiers and audit bundles a relying party can run with no AlgoVoi service in the loop: verify.algovoi.co.uk, verify-it-yourself, evidence readers, reseal-verify."),
     ("keyid",      "Key identity / DID / credential binding",
@@ -186,12 +186,24 @@ def write_readme(records):
         "> key architectural elements. Generated from the live GitHub inventory on " + STAMP + ".",
         "> **No sellable code lives here** — this is the documentation layer over the estate.",
         "",
+        "## Start here",
+        "",
+        "**[The AlgoVoi overview](OVERVIEW.md)** — one document covering the whole estate: the stack, the",
+        "products, the documented subjects and the live platforms. Every number in it is read from these",
+        "artefacts at build time.",
+        "",
         "## How to read this atlas",
         "",
-        "Two axes:",
+        "Three axes:",
         "",
+        "0. **The overview** — [`OVERVIEW.md`](OVERVIEW.md) is the single front door; read it first.",
         "1. **Products by layer** — [`products.md`](products.md) groups every repo into the architectural stack (L0 substrate → L8 platform).",
         "2. **Products × key elements** — [`overlap.md`](overlap.md) is the matrix: which shared elements each product implements or depends on.",
+        "",
+        "And two indexes over the documentation itself:",
+        "",
+        "- [`subjects.md`](subjects.md) — every documented subject on docs.algovoi.co.uk, grouped by reader's job.",
+        "- [`platforms.md`](platforms.md) — the live host surfaces, with the HTTP status each returned when probed.",
         "",
         "Each key element also has its own page under [`elements/`](elements/) listing the products that touch it.",
         "",
@@ -209,7 +221,7 @@ def write_readme(records):
         "refs":"Content-addressed references and payment-lifecycle receipt formats.",
         "keystone":"Keystone L2 composition and the **algovoi-fabric** flagship spine.",
         "verify":"Offline, third-party verification and audit bundles.",
-        "conform":"Cross-language conformance batteries — the cross-validation moat.",
+        "conform":"Cross-language conformance batteries across independent implementations.",
         "settlement":"Algorand/Voi settlement, state proofs, bridges, wallet auth (AVM).",
         "protocols":"AP2 / ACP / x402 / MPP / A2A adapters and the MCP tool surface.",
         "platform":"The hosted gateway, pay rail, platform and secure hub.",
@@ -316,10 +328,13 @@ def write_llms(records):
        "> Documentation-only map of every public AlgoVoi product and how each overlaps the key "
        "architectural elements. Generated from the live GitHub inventory. No sellable code.","",
        "## Docs",
+       f"- [The AlgoVoi overview]({base}/OVERVIEW.md): the whole estate in one document — stack, products, documented subjects and live platforms, with every count read from build artefacts.",
        f"- [Product catalogue]({base}/products.md): every public AlgoVoi repo grouped by architectural layer, with descriptions and element tags.",
        f"- [Overlap matrix]({base}/overlap.md): which of the 12 key elements each product implements or depends on.",
+       f"- [Subject index]({base}/subjects.md): every documented subject on docs.algovoi.co.uk, grouped by what the reader is trying to do.",
+       f"- [Platforms]({base}/platforms.md): the live host surfaces and the HTTP status each returned when probed.",
        f"- [Consolidated docs approach]({base}/docs-strategy.md): how GitHub and docs.algovoi.co.uk fit together, AEO/SEO-friendly.",
-       "","## Key elements"]
+       "", "## Key elements"]
     for s,t,d in ELEMENTS:
         L.append(f"- [{t}]({base}/elements/{s}.md): {d.split('. ')[0].rstrip('.')}.")
     L+=["","## Canonical references",""]
