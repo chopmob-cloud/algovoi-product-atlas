@@ -1,0 +1,64 @@
+{
+  "probed": "2026-11-26",
+  "method": "urllib GET, 25s timeout, Mozilla UA; http=None means no response",
+  "surfaces": [
+    {
+      "key": "docs",
+      "label": "Documentation",
+      "url": "https://docs.algovoi.co.uk/introduction",
+      "desc": "The canonical documentation site; every subject in the subject index lives here.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "gateway",
+      "label": "Hosted gateway",
+      "url": "https://api.algovoi.co.uk/health",
+      "desc": "Multi-chain x402 facilitator: tenants, API keys, KYB. Liveness at /health.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "suite_store",
+      "label": "Suite store",
+      "url": "https://api.algovoi.co.uk/suite-store",
+      "desc": "Where a free licence key is issued per deployment.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "x402_discovery",
+      "label": "x402 discovery",
+      "url": "https://api.algovoi.co.uk/.well-known/x402",
+      "desc": "Machine-readable statement of the paid routes the gateway serves.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "pay_rail",
+      "label": "Pay rail",
+      "url": "https://pay.algovoi.co.uk/",
+      "desc": "Tenant-free rail: no account, settlement is the credential.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "verify",
+      "label": "Verification",
+      "url": "https://verify.algovoi.co.uk/",
+      "desc": "Browser verification of a receipt with no AlgoVoi service in the loop.",
+      "http": 200,
+      "live": true
+    },
+    {
+      "key": "apex",
+      "label": "Marketing site",
+      "url": "https://algovoi.co.uk/",
+      "desc": "The public marketing apex.",
+      "http": 200,
+      "live": true
+    }
+  ],
+  "live_count": 7,
+  "total_count": 7
+}

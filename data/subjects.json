@@ -1,0 +1,1398 @@
+{
+  "generated": "2026-11-26",
+  "source": "https://docs.algovoi.co.uk/llms.txt",
+  "subjects": [
+    {
+      "slug": "chains/algorand",
+      "title": "Algorand USDC payments",
+      "desc": "Accept USDC (ASA 31566704) on Algorand: memo bound checkouts, roughly five second confirmation, sub cent fees, plus xChain MetaMask pay via Allbridge.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 34
+    },
+    {
+      "slug": "chains/voi",
+      "title": "VOI aUSDC payments",
+      "desc": "Accept aUSDC (ASA 302190) on VOI: Algorand fork architecture, memo bound checkouts, opt in required, and sub cent transfer fees.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 35
+    },
+    {
+      "slug": "chains/hedera",
+      "title": "Hedera USDC payments",
+      "desc": "Accept USDC (HTS token 0.0.456858) on Hedera: memo bound checkouts, token association payouts, and Mirror Node verification on mainnet and testnet.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 36
+    },
+    {
+      "slug": "chains/stellar",
+      "title": "Stellar USDC payments",
+      "desc": "Accept USDC on Stellar: short 28 byte MEMO_TEXT binding, trustline payouts, Horizon API verification, and xChain MetaMask pay through Allbridge Core.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 37
+    },
+    {
+      "slug": "chains/base",
+      "title": "Base USDC payments",
+      "desc": "Accept USDC (ERC-20) on Base: EVM native settlement, amount only binding, and x402 payment facilitation on both Base mainnet and Base Sepolia testnet.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 38
+    },
+    {
+      "slug": "chains/solana",
+      "title": "Solana USDC payments",
+      "desc": "Accept USDC (SPL) on Solana: Solana Pay reference pubkey binding, associated token accounts, and xChain MetaMask payments routed through Circle CCTP V2.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 39
+    },
+    {
+      "slug": "chains/tempo",
+      "title": "Tempo USDCe payments",
+      "desc": "Accept USDCe (TIP-20) on Tempo: EVM style settlement, amount only binding, and x402, MPP, AP2 and AgentCash on Tempo mainnet and Moderato testnet.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 40
+    },
+    {
+      "slug": "chains/arc",
+      "title": "ARC Network RPC and Chain ID",
+      "desc": "ARC Network testnet RPC (rpc.testnet.arc.io, formerly rpc.testnet.arc.network), chain ID 5042002, native-USDC gas, and EVM wallet setup for MetaMask and Rabby. ARC mainnet (chain ID 5042) is expected September 2026; AlgoVoi's Arc settlement support ships now.",
+      "group": "Chains",
+      "in_nav": true,
+      "nav_order": 41
+    },
+    {
+      "slug": "compliance",
+      "title": "Compliance & Security",
+      "desc": "AlgoVoi compliance overview for developers: what we do, what the policy binder contains, and how to request the full documents under NDA.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 44
+    },
+    {
+      "slug": "compliance-receipt",
+      "title": "Compliance Receipt Format",
+      "desc": "AlgoVoi authored admission time compliance receipt format: a categorical ALLOW, REFER, DENY enumeration under JCS RFC 8785, with a companion IETF draft.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 45
+    },
+    {
+      "slug": "no-pii-compliance-receipt",
+      "title": "No-PII Compliance Receipts",
+      "desc": "A no PII compliance receipt binds an ALLOW, REFER or DENY screening verdict to a content addressed payer reference that is hashed and never emitted.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 46
+    },
+    {
+      "slug": "compliance-gate-v1",
+      "title": "Compliance Gate Extension v1",
+      "desc": "AlgoVoi authored A2A extension for the admission time sanctions and KYC gate: a closed ALLOW, REFER, DENY verdict enumeration under JCS RFC 8785.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 47
+    },
+    {
+      "slug": "compliance-gate-v2",
+      "title": "Compliance Gate",
+      "desc": "Turn a screening decision into a signed, no PII compliance receipt: a categorical ALLOW, REFER or DENY verdict that verifies offline. Commercial OEM SDK.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 48
+    },
+    {
+      "slug": "compliance-gate-lite",
+      "title": "Compliance Gate (lite)",
+      "desc": "Content addressed compliance decisions for the AlgoVoi substrate: bind an ALLOW, REFER or DENY verdict and a no PII payer reference to the policy in force.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 49
+    },
+    {
+      "slug": "sanctions-monitor",
+      "title": "Sanctions Monitor",
+      "desc": "Continuous sanctions monitoring as signed, no PII delta evidence: keep a counterparty watchlist, re-screen on every refresh, emit a signed delta receipt.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 50
+    },
+    {
+      "slug": "travel-rule",
+      "title": "Travel Rule",
+      "desc": "FATF Travel Rule (Recommendation 16) as signed, no PII, post quantum confidential evidence exchanged between VASPs, with a Falcon-1024 signed receipt.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 51
+    },
+    {
+      "slug": "proofs",
+      "title": "Zero knowledge compliance proofs",
+      "desc": "Prove a payment was screened and compliant, and that the payer's risk score cleared a threshold, without revealing PII or the score. Commercial OEM SDK.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 52
+    },
+    {
+      "slug": "receipt-verifier",
+      "title": "Compliance receipt verifier",
+      "desc": "Standalone reference verifier for AlgoVoi JWS compliance receipts: offline capable, no infrastructure trust, Python and TypeScript with shared vectors.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 64
+    },
+    {
+      "slug": "retention-chain-substrate",
+      "title": "Retention Chain Substrate",
+      "desc": "Self verifiable audit chain linking payment receipts with no external infrastructure. Cross validated in eight languages. Satisfies MiCA 80 and DORA 14.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 80
+    },
+    {
+      "slug": "verifiable-compliance-suite",
+      "title": "Self Hosted Compliance Evidence Platform",
+      "desc": "Self hosted, air gap capable evidence estate for HIPAA, GDPR and eIDAS: post quantum signatures, a tamper evident audit log, RFC 3161 trusted timestamps.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 112
+    },
+    {
+      "slug": "vcs-deployment-guide",
+      "title": "Compliance Suite: Setup and Deployment",
+      "desc": "Install and operate the AlgoVoi Verifiable Compliance Suite: extract the bundle, run the Command Center, set up accounts, roles and two factor sign in.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 113
+    },
+    {
+      "slug": "eu-ai-act-recordkeeping",
+      "title": "EU AI Act Article 12 Record Keeping",
+      "desc": "EU AI Act Article 12 record keeping obligations apply from 2 December 2027 (Annex III) and 2 August 2028 (Annex I) under Regulation (EU) 2026/1744. Meet them on a self hosted, tamper evident log estate you control: hash chained integrity and offline verify for authorities.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 114
+    },
+    {
+      "slug": "mica-dora-evidence",
+      "title": "MiCA and DORA Record Keeping Evidence",
+      "desc": "MiCA Article 68(9) and DORA logging evidence: self hosted, tamper evident, offline verifiable records under your own keys, with RFC 3161 timestamps.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 115
+    },
+    {
+      "slug": "regulated-records-self-hosting-guide",
+      "title": "Self Host Regulated Records Preservation",
+      "desc": "Run a self hosted, air gap capable evidence estate for HIPAA, GDPR and eIDAS records: RFC 3161 timestamping, a tamper evident audit log, and legal holds.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 116
+    },
+    {
+      "slug": "scim-provisioning",
+      "title": "SCIM 2.0 Provisioning",
+      "desc": "Auto provision and deprovision Compliance Command Center accounts from Okta, Azure AD or OneLogin over SCIM 2.0, mapping directory groups onto RBAC roles.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 118
+    },
+    {
+      "slug": "arkivum-alternative",
+      "title": "Self Hosted Arkivum Alternative",
+      "desc": "Arkivum alternative you host yourself: air gap capable records preservation, one perpetual licence, post quantum signatures, offline verification.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 119
+    },
+    {
+      "slug": "preservica-alternative",
+      "title": "Self Hosted Preservica Alternative",
+      "desc": "Preservica alternative you host yourself: records preservation on your own infrastructure, one perpetual licence, post quantum signed, air gap capable.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 120
+    },
+    {
+      "slug": "records-vault",
+      "title": "Records Vault",
+      "desc": "Regulated records preservation for health and legal: RFC 3161 trusted timestamping, a tamper evident read access log, and legal and e-discovery holds.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 123
+    },
+    {
+      "slug": "retention-app",
+      "title": "Retention App",
+      "desc": "Signed, offline verifiable payment receipt retention: auto maintained per issuer hash linked chains and Falcon-1024 signed evidence exports for auditors.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 124
+    },
+    {
+      "slug": "audit-log",
+      "title": "Verifiable Audit Log",
+      "desc": "Append any business event to a tamper evident, post quantum chain. Entries are content addressed, append only and verifiable offline. Commercial OEM SDK.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 125
+    },
+    {
+      "slug": "compliance-command-center",
+      "title": "Compliance Command Center",
+      "desc": "Self hosted management console over your AlgoVoi estate: ingests exported evidence, re-verifies every signed chain offline, and exports an auditor pack.",
+      "group": "Compliance and record keeping",
+      "in_nav": true,
+      "nav_order": 128
+    },
+    {
+      "slug": "protocols-and-chains",
+      "title": "Protocols and chains",
+      "desc": "The agent payment protocols AlgoVoi implements, x402, MPP, AP2, A2A and Solana Actions, and every chain it settles on with asset IDs and binding.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 9
+    },
+    {
+      "slug": "chain-agnostic-negotiation",
+      "title": "Chain-agnostic agent payment negotiation",
+      "desc": "Agents that speak different chains negotiate a shared settlement lane, then pay from their own wallet. No account. Twelve mainnet chains across x402, MPP, AP2 and A2A.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 16
+    },
+    {
+      "slug": "signed-token-anchoring",
+      "title": "Signed-Token Anchoring",
+      "desc": "Which bytes you hash when anchoring a signed receipt: anchor the raw signed JWS or SD-JWT bytes, never a re-canonicalised decoded payload.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 75
+    },
+    {
+      "slug": "execution-ref",
+      "title": "execution_ref",
+      "desc": "Decision bound execution evidence over the AlgoVoi substrate: binds an executed agent action to the exact decision that authorised it. RFC 8785, SHA-256.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 77
+    },
+    {
+      "slug": "policy-binding",
+      "title": "Policy Binding",
+      "desc": "Additive policy snapshot binding over a frozen subject reference: proves which ruleset version was in force when a record was sealed. Apache 2.0.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 78
+    },
+    {
+      "slug": "cell-kaf",
+      "title": "Cell and KAF",
+      "desc": "The Keystone Assurance Framework: hermetic cells that reproduce every JCS conformance vector byte for byte, and sealed, hash-chained receipts you verify offline with no trust in AlgoVoi.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 82
+    },
+    {
+      "slug": "adoption-evidence",
+      "title": "Ecosystem Adoption Evidence",
+      "desc": "Reproducible evidence that the AlgoVoi canonicalisation substrate reached ecosystem infrastructure. Every datum recomputes against public APIs.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 86
+    },
+    {
+      "slug": "ecosystem-contributions",
+      "title": "Ecosystem contributions",
+      "desc": "Public pull requests and IETF Internet-Drafts AlgoVoi filed upstream to x402, AP2, A2A, MPP and the JCS substrate. Verifiable proof of work.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 87
+    },
+    {
+      "slug": "x402-document-index",
+      "title": "x402 Document Index",
+      "desc": "Neutral index of IETF Internet-Drafts, published specifications and URN registrations in the x402 receipt format ecosystem, by author and by anchor.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 88
+    },
+    {
+      "slug": "package-suite",
+      "title": "Package Suite",
+      "desc": "25 AlgoVoi open source packages on PyPI and 25 on npm under Apache 2.0, three commercial packages, and the 29 tool MCP server on three registries.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 91
+    },
+    {
+      "slug": "post-quantum-evidence-longevity",
+      "title": "Post Quantum Evidence Longevity",
+      "desc": "How Falcon-1024 and ML-DSA-65 signatures keep compliance evidence verifiable for decades: long term key custody in HSM, KMS or Vault, and 21 CFR Part 11.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 117
+    },
+    {
+      "slug": "passport-bolt-ons",
+      "title": "Build a passport bolt-on",
+      "desc": "Map any identity or KYC source into a content addressed AlgoVoi agent passport_ref: a deterministic, no PII reference for the pre-payment decision chain.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 136
+    },
+    {
+      "slug": "recovery-vault",
+      "title": "Recovery Vault",
+      "desc": "Threshold (Shamir k-of-n) post quantum key recovery for any Substrate 2 key: data loss protection and identity continuity with no third party key use.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 156
+    },
+    {
+      "slug": "product-key-registry",
+      "title": "Product Key Registry",
+      "desc": "A Falcon-1024 signed registry of AlgoVoi signing keys with per product custody and did:web identities. Authenticate any signature and follow key rotation.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 159
+    },
+    {
+      "slug": "support",
+      "title": "Support and contact",
+      "desc": "How to get help with AlgoVoi by email, GitHub and security disclosure, what to include in a request, and response targets for tickets and incidents.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 164
+    },
+    {
+      "slug": "changelog",
+      "title": "AlgoVoi changelog",
+      "desc": "AlgoVoi releases, new chain support and breaking changes: MCP server tools, Agent Trust Bench certificates, xChain settlement and protocol adapters.",
+      "group": "Corpus and provenance",
+      "in_nav": true,
+      "nav_order": 167
+    },
+    {
+      "slug": "integrations/overview",
+      "title": "Integrations overview",
+      "desc": "Drop-in adapters for e-commerce, chat bots, AI frameworks, accounting, and more. One-line install, then point at your tenant.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 22
+    },
+    {
+      "slug": "integrations/ecommerce",
+      "title": "E-commerce adapters",
+      "desc": "Drop in USDC payment modules for Shopify, WooCommerce, Magento, Wix and Squarespace, plus settlement links for Amazon, eBay, Etsy and Walmart.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 23
+    },
+    {
+      "slug": "integrations/chat-bots",
+      "title": "Chat bot payments",
+      "desc": "Take USDC payments inside Discord, Telegram, X, Viber, and WhatsApp with AlgoVoi chat bots. Type 'pay £5' to mint a hosted checkout across seven chains.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 24
+    },
+    {
+      "slug": "integrations/ai-frameworks",
+      "title": "AI agent frameworks",
+      "desc": "Payment-gate AI agents in LangChain, LangGraph, CrewAI, AutoGen, LlamaIndex, Vercel AI SDK, and ElizaOS. AlgoVoi adds x402, MPP, and AP2 USDC paywalls.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 25
+    },
+    {
+      "slug": "integrations/ai-models",
+      "title": "AI model APIs",
+      "desc": "Paywall OpenAI, Claude, Gemini, Cohere, Mistral, Bedrock, and xAI Grok per call in USDC. AlgoVoi model adapters add x402, MPP, or AP2 payment to each SDK.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 26
+    },
+    {
+      "slug": "integrations/mcp-server",
+      "title": "AlgoVoi MCP server",
+      "desc": "Expose AlgoVoi as MCP tools to Claude Desktop, Claude Code, Cursor, and Windsurf. Create USDC payment links and verify x402, MPP, AP2, and A2A on-chain.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 27
+    },
+    {
+      "slug": "integrations/native-sdks",
+      "title": "Native SDKs",
+      "desc": "Zero-dependency AlgoVoi SDKs for Go, PHP, Python, and Rust. One standard-library file creates USDC checkouts, verifies webhooks, and checks payment status.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 28
+    },
+    {
+      "slug": "integrations/no-code",
+      "title": "No-code platforms",
+      "desc": "Wire AlgoVoi USDC payments into Pabbly Connect, Activepieces, GiveWP, and Gravity Forms. Build crypto-payment checkout and triggers with no code.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 29
+    },
+    {
+      "slug": "integrations/accounting",
+      "title": "Accounting and invoicing",
+      "desc": "Attach AlgoVoi USDC payment links to invoices in Xero, QuickBooks, FreshBooks, MYOB, Sage, Wave and Zoho Books, with writeback on payment confirmation.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 30
+    },
+    {
+      "slug": "integrations/banking",
+      "title": "Open banking",
+      "desc": "Accept UK Faster Payments and SEPA Instant via TrueLayer or Yapily, then settle automatically as USDC on-chain through AlgoVoi's open-banking adapters.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 31
+    },
+    {
+      "slug": "integrations/chrome-extension",
+      "title": "Chrome extension",
+      "desc": "AlgoVoi's in house browser wallet: native x402, MPP and AP2 payment protocol support across six chains in one Manifest V3 Chrome extension.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 32
+    },
+    {
+      "slug": "integrations/outbound-webhooks",
+      "title": "Outbound webhooks",
+      "desc": "Stripe-shaped events delivered to your endpoint with HMAC-SHA256 signing, exponential-backoff retry, and a per-tenant audit log.",
+      "group": "Integrations",
+      "in_nav": true,
+      "nav_order": 33
+    },
+    {
+      "slug": "composite-trust-query",
+      "title": "Composite Trust Query Response Format",
+      "desc": "AlgoVoi authored verifier side response format for agentic payment audit chains: a closed four element trust verdict enumeration under JCS RFC 8785.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 57
+    },
+    {
+      "slug": "agent-session-auth",
+      "title": "Agent Session Authentication",
+      "desc": "Exchange an ATB ZKP certificate or a federation token for a short lived HMAC session JWT with an embedded spend cap, used across all payment routes.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 63
+    },
+    {
+      "slug": "agent-trust-bench",
+      "title": "Agent Trust Bench",
+      "desc": "Open agentic payment security test suite: run 187 adversarial x402 profiles against your AI agent. Free, provider neutral, no AlgoVoi account required.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 105
+    },
+    {
+      "slug": "operator-control-panel",
+      "title": "Operator Control Panel",
+      "desc": "The operator console for a self hosted AlgoVoi Payment Rails deployment: merchants, payments, refunds, invoices, API keys, compliance and an audit log.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 108
+    },
+    {
+      "slug": "command-center-products",
+      "title": "Plug a product into the Command Center",
+      "desc": "Any product with a health endpoint joins the Command Center live service bridge with one set of environment variables, and self registers on boot.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 129
+    },
+    {
+      "slug": "crypto-agility",
+      "title": "Crypto-Agility",
+      "desc": "Migrate a signing and encryption estate from classical to post quantum with provable continuity: classify keys, hybrid sign, re-attest evidence forward.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 133
+    },
+    {
+      "slug": "agent-passport",
+      "title": "Agent Passport",
+      "desc": "Issue post quantum trust credentials to AI agents, verify them offline before granting spend authority, and revoke them instantly. Commercial OEM SDK.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 134
+    },
+    {
+      "slug": "agent-passport-lite",
+      "title": "Agent Passport (lite)",
+      "desc": "Content addressed agent identity references for the AlgoVoi substrate: bind agent_id, issuer, scope and validity window into a deterministic passport_ref.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 135
+    },
+    {
+      "slug": "spend-guardrail",
+      "title": "Spend Guardrail",
+      "desc": "The decision point for agentic payments: verify the passport, enforce the mandate, apply your policy, and get a signed ALLOW, DENY or REFER in one call.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 137
+    },
+    {
+      "slug": "spend-guardrail-lite",
+      "title": "Spend Guardrail (lite)",
+      "desc": "Content addressed pre-payment decisions for the AlgoVoi substrate: bind a categorical ALLOW or DENY to the agent, the spend authority and the policy.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 138
+    },
+    {
+      "slug": "agent-guard",
+      "title": "Agent Guard",
+      "desc": "A spend budget an AI agent cannot raise itself: a human-signed mandate, fail-closed pre-execution checks, and receipts anyone can recompute offline. Free, Apache-2.0, runnable in one command.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 139
+    },
+    {
+      "slug": "spend-decision-chain",
+      "title": "Decision chain (composition keystone)",
+      "desc": "The open agentic payment lifecycle proven end to end: identity, authority, policy and the guardrail_ref decision compose into one recomputable chain.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 140
+    },
+    {
+      "slug": "payment-mandate",
+      "title": "Payment Mandate",
+      "desc": "The verifiable authorisation behind recurring and agentic crypto payments: a payer signs a capped, revocable mandate once and every pull is checked on it.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 141
+    },
+    {
+      "slug": "payment-mandate-lite",
+      "title": "Payment Mandate (lite)",
+      "desc": "Content addressed spend authority references for the AlgoVoi substrate: bind payer, cap, period and revocation state into a deterministic mandate_ref.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 142
+    },
+    {
+      "slug": "delegation-ref",
+      "title": "Delegation Ref",
+      "desc": "Content addressed delegation references for the AlgoVoi substrate: bind delegator, delegate, scope and validity into a tamper evident delegation_ref.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 143
+    },
+    {
+      "slug": "composite-trust-query-lite",
+      "title": "Composite Trust Query (lite)",
+      "desc": "Content addressed trust verdict references for the AlgoVoi substrate: bind a categorical verdict over an ordered set of pinned refs into a trust_query_ref.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 146
+    },
+    {
+      "slug": "keystone",
+      "title": "The Keystone",
+      "desc": "The AlgoVoi Keystone is the agentic payment trust chain, byte verifiable end to end: identity, authority, policy, decision, execution and verdict.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 147
+    },
+    {
+      "slug": "keystone-sdk",
+      "title": "The Keystone SDK",
+      "desc": "algovoi-keystone is the umbrella install: the connector builder, the agentic behaviour layer and the keystone command line in one place. Apache 2.0.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 148
+    },
+    {
+      "slug": "keystone-proof",
+      "title": "The Keystone, proven on-chain",
+      "desc": "The Keystone trust chain bound to real settlements on seven public testnets across x402, MPP, AP2 and A2A, every reference recomputable offline.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 149
+    },
+    {
+      "slug": "keystone-connectors",
+      "title": "Keystone Connectors",
+      "desc": "Keystone connectors bind a real data layer operation, such as a database write or an HTTP request, to the keystone decision that authorised it.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 150
+    },
+    {
+      "slug": "keystone-connect",
+      "title": "Build and test a Keystone bolt-on",
+      "desc": "algovoi-keystone-connect is an open toolkit for Keystone bolt-ons: build a data layer connector in about twelve lines, and verify any bolt-on offline.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 151
+    },
+    {
+      "slug": "keystone-agent",
+      "title": "Rules, behaviours and triggers",
+      "desc": "algovoi-keystone-agent is the behaviour layer for Keystone: declare rules and triggers as small specs, and gate any keystone-connect write before commit.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 152
+    },
+    {
+      "slug": "keystone-runtime",
+      "title": "Runtime and journal",
+      "desc": "algovoi-keystone-runtime runs a Keystone chain and persists every emitted reference to a queryable, tamper evident SQLite journal that recomputes offline.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 153
+    },
+    {
+      "slug": "publishing-bolt-ons",
+      "title": "Publishing a Keystone bolt-on",
+      "desc": "Take a Keystone bolt-on from scaffold to a published, installable package: build the wheel, publish to PyPI or a private index, confirm auto discovery.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 154
+    },
+    {
+      "slug": "bring-your-own-keys",
+      "title": "Bring Your Own Keys",
+      "desc": "Hold your AlgoVoi signing and encryption keys in your own HSM, KMS or Vault. Custody is pluggable and signed output is byte identical, so verify is too.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 157
+    },
+    {
+      "slug": "atb-reputation-credential",
+      "title": "ATB Pass Certificate: Reputation Pricing",
+      "desc": "Falcon-1024 signed reputation credential from the Agent Trust Bench: prove a refusal rate score to x402 gateways for variable pricing, JCS canonical.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 160
+    },
+    {
+      "slug": "atb-reputation-credential-agent-guide",
+      "title": "ATB Pass Certificate: Agent Guide",
+      "desc": "Integrate the ATB Pass Certificate into your agent payment flow: run the bench, fetch a certificate, present it on x402 requests for pricing discounts.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 161
+    },
+    {
+      "slug": "atb-hub-conformance",
+      "title": "ATB Hub Conformance: Approval Guide",
+      "desc": "Conformance specification for running your own ATB Pass Certificate issuer hub: requirements, application process, and registry inclusion criteria.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 162
+    },
+    {
+      "slug": "atb-vnext",
+      "title": "ATB vNext: verifiable agent evaluation",
+      "desc": "Verifiable offline evaluation harness for payment agents: six test modes, seven OWASP LLM Top 10 scenario packs, five scores, a signed reproducible corpus.",
+      "group": "Keystone and agent trust",
+      "in_nav": true,
+      "nav_order": 163
+    },
+    {
+      "slug": "algovoi-pay",
+      "title": "AlgoVoi Pay",
+      "desc": "AlgoVoi Pay (pay.algovoi.co.uk) is a tenant-free, cross-protocol payment rail that charges USDC per call and returns an offline-verifiable signed receipt on every response.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 15
+    },
+    {
+      "slug": "concepts/payment-links",
+      "title": "Payment links",
+      "desc": "Payment links create short lived hosted checkout URLs so customers pay in USDC by wallet or QR, for humans where x402 agent payment is too low level.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 17
+    },
+    {
+      "slug": "concepts/recurring",
+      "title": "Recurring payments",
+      "desc": "Three recurring payment models on AlgoVoi: invoice subscriptions (Recurr), agent native standing authority (MPP), and fiat funded agent mandates (APM).",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 18
+    },
+    {
+      "slug": "concepts/mandates",
+      "title": "Agentic Payment Mandates (APM)",
+      "desc": "Fiat funded JWT spending authority (in development): a human authorises a GBP cap once, the agent pays autonomously, AlgoVoi settles merchants in crypto.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 19
+    },
+    {
+      "slug": "concepts/xchain",
+      "title": "xChain payments",
+      "desc": "Let MetaMask users pay AlgoVoi checkouts with no destination chain wallet. Algorand, Solana and Stellar live, routed via Circle CCTP V2 or Allbridge Core.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 20
+    },
+    {
+      "slug": "concepts/notifications",
+      "title": "Notifications",
+      "desc": "Slack, Discord, Teams, Telegram, Mattermost, Rocket.Chat, Google Chat, Zulip, generic webhook. Same retry stack behind every destination.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 21
+    },
+    {
+      "slug": "concepts/chains-overview",
+      "title": "Chains overview",
+      "desc": "AlgoVoi's supported chains compared: stablecoins, confirmation times, fees, and the memo, reference pubkey and amount only binding mechanisms. Seven live today; Arc (Circle's USDC-native L1) settling from September 2026.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 42
+    },
+    {
+      "slug": "platform-and-api",
+      "title": "Platform and API",
+      "desc": "The hosted platform: gateway, control plane, facilitator, compliance engine and audit chain, plus the REST API reference and the concepts behind them.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 92
+    },
+    {
+      "slug": "platform-schema",
+      "title": "Platform schema reference",
+      "desc": "The canonical platform objects: payment links, payment events, receipts, attestations, mandates and references, and the page defining each schema.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 93
+    },
+    {
+      "slug": "platform/apm",
+      "title": "Agent Payment Module (APM)",
+      "desc": "The AlgoVoi production agentic payment platform: non custodial live rails and Recurr, plus a separate in development custodial mandate runtime.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 94
+    },
+    {
+      "slug": "platform/gateway",
+      "title": "Payment Gateway",
+      "desc": "The gateway at api.algovoi.co.uk: entry point for x402, MPP, AP2 and A2A traffic, handling auth, idempotency and routing to the facilitator.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 95
+    },
+    {
+      "slug": "platform/facilitator",
+      "title": "Facilitator",
+      "desc": "The stateless on-chain verifier: given a transaction and a checkout, it answers whether that exact amount of that asset reached that address.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 96
+    },
+    {
+      "slug": "platform/control-plane",
+      "title": "Control Plane",
+      "desc": "Tenant onboarding, KYC and KYB state, API key rotation, webhook registration and mandate state: the management backend behind the gateway.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 97
+    },
+    {
+      "slug": "platform/compliance-engine",
+      "title": "Compliance Engine",
+      "desc": "Sanctions screening against OFSI, OFAC SDN and the EU consolidated list with daily refresh, risk-tiered due diligence, and generic SAMLA-safe verdicts.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 98
+    },
+    {
+      "slug": "platform/audit-chain",
+      "title": "Audit Chain",
+      "desc": "Every audit, screening and compliance event hash-linked at insert over RFC 8785 canonical JSON, so alteration is detectable rather than survivable.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 99
+    },
+    {
+      "slug": "platform/recurr-engine",
+      "title": "Recurring Payment Engine",
+      "desc": "Two tier recurring payment execution: MPP subscription invoicing and standing authority pull payments, with a customer self serve portal. All seven chains.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 100
+    },
+    {
+      "slug": "platform/dashboard",
+      "title": "Merchant Dashboard",
+      "desc": "The AlgoVoi operator and merchant dashboard: payment analytics, tenant management, risk monitoring, subscription tracking and compliance controls.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 101
+    },
+    {
+      "slug": "concepts/architecture",
+      "title": "Architecture",
+      "desc": "AlgoVoi's four tier topology: Cloudflare, the cloud edge, gateway and stateless facilitator, plus chain RPCs, price oracle and encryption at rest design.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 102
+    },
+    {
+      "slug": "concepts/kyc-and-mainnet",
+      "title": "KYC and mainnet",
+      "desc": "KYC and mainnet: identity verification gates live USDC payments, runs sanctions screening, and unlocks the $1,000 free mainnet allowance on seven chains.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 103
+    },
+    {
+      "slug": "x402-build-vs-buy",
+      "title": "x402 Facilitator: Build vs Buy",
+      "desc": "Honest cost breakdown of building your own x402 facilitator versus buying a self hosted gateway: seven chains, post quantum receipts, AP2, A2A and audit.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 111
+    },
+    {
+      "slug": "api-reference/introduction",
+      "title": "API introduction",
+      "desc": "AlgoVoi REST API at api.algovoi.co.uk: base URL, JSON content type, Bearer authentication, idempotency keys, request IDs, versioning, and rate limits.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 168
+    },
+    {
+      "slug": "api-reference/authentication",
+      "title": "Authentication",
+      "desc": "Authenticate to the AlgoVoi API with a Bearer key plus X-Tenant-Id header: key prefixes (algv_, algvc_, algvw_), scopes, test versus live, and rotation.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 169
+    },
+    {
+      "slug": "api-reference/errors",
+      "title": "API errors and status codes",
+      "desc": "AlgoVoi API errors: the JSON error envelope, HTTP status mapping (400/401/402/403/409/422/429), common error codes, and 4xx vs 5xx retry behaviour.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 170
+    },
+    {
+      "slug": "api-reference/rate-limits",
+      "title": "Rate limits",
+      "desc": "AlgoVoi API rate limits: per tenant (300/min) and per IP (120/min) caps, X-RateLimit headers, 429 Retry-After, and exponential back off with jitter.",
+      "group": "Platform and API",
+      "in_nav": true,
+      "nav_order": 171
+    },
+    {
+      "slug": "protocols/x402",
+      "title": "x402 (HTTP 402 Payment Required)",
+      "desc": "x402 charges per HTTP request and settles on chain. AlgoVoi is a multi-chain x402 facilitator issuing offline verifiable receipts and attestations.",
+      "group": "Protocols",
+      "in_nav": true,
+      "nav_order": 10
+    },
+    {
+      "slug": "protocols/mpp",
+      "title": "MPP (Method Payment Protocol)",
+      "desc": "MPP charges per call for MCP tools and JSON-RPC methods. AlgoVoi is a registered multi-chain MPP service issuing per method, offline verifiable receipts.",
+      "group": "Protocols",
+      "in_nav": true,
+      "nav_order": 11
+    },
+    {
+      "slug": "protocols/ap2",
+      "title": "AP2 (Agent Payments Protocol)",
+      "desc": "AP2 is Google's mandate based protocol for autonomous agent commerce. AlgoVoi settles AP2 mandates on chain and issues mandate bound verifiable receipts.",
+      "group": "Protocols",
+      "in_nav": true,
+      "nav_order": 12
+    },
+    {
+      "slug": "protocols/a2a",
+      "title": "A2A (Agent2Agent Protocol)",
+      "desc": "Google's open protocol for AI agents to discover and call each other. AlgoVoi runs a live, payment gated A2A agent issuing offline verifiable attestations.",
+      "group": "Protocols",
+      "in_nav": true,
+      "nav_order": 13
+    },
+    {
+      "slug": "protocols/solana-actions",
+      "title": "Solana Actions and Blinks",
+      "desc": "AlgoVoi exposes hosted USDC checkouts as Solana Actions, rendered by any Blink aware client through dial.to, X and Discord, with reference binding.",
+      "group": "Protocols",
+      "in_nav": true,
+      "nav_order": 14
+    },
+    {
+      "slug": "settlement-attestation",
+      "title": "Settlement Attestation Format",
+      "desc": "AlgoVoi authored multi-chain settlement attestation format: a categorical SETTLED, PENDING_FINALITY, REVERSED enumeration under JCS RFC 8785.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 53
+    },
+    {
+      "slug": "refund-receipt",
+      "title": "Refund Receipt Format",
+      "desc": "AlgoVoi authored refund receipt format: a categorical FULL, PARTIAL, REJECTED enumeration under JCS RFC 8785 that composes with compliance receipts.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 55
+    },
+    {
+      "slug": "cancellation-receipt",
+      "title": "Mandate Cancellation Receipt Format",
+      "desc": "AlgoVoi authored mandate cancellation receipt format: a closed four element reason enumeration under JCS RFC 8785, with a companion IETF Internet-Draft.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 56
+    },
+    {
+      "slug": "payment-evidence-frame",
+      "title": "Payment Evidence Frame (PEF)",
+      "desc": "AlgoVoi authored canonical wrapper format for payment lifecycle receipts: a byte deterministic frame_id via JCS RFC 8785 plus optional RFC 9421 signature.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 58
+    },
+    {
+      "slug": "agentic-payment-receipts",
+      "title": "Agentic Payment Receipts",
+      "desc": "Verifiable agentic payment receipts across x402, AP2, A2A and MPP. Offline recomputable, no PII, on one shared JCS (RFC 8785) canonicalisation substrate.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 59
+    },
+    {
+      "slug": "verifiable-x402-receipt",
+      "title": "Verifiable x402 Receipts",
+      "desc": "Issue and verify an x402 receipt any party can recompute offline. AlgoVoi pins RFC 8785 and SHA-256, so verification needs no issuer call and no account.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 60
+    },
+    {
+      "slug": "offline-verifiable-receipts",
+      "title": "Offline-Verifiable Agent Payment Receipts",
+      "desc": "An offline verifiable agent payment receipt recomputes from its own preimage with RFC 8785 and SHA-256: no network, no issuer call, no service dependency.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 61
+    },
+    {
+      "slug": "x402-receipt-adapter",
+      "title": "x402 receipt adapter",
+      "desc": "algovoi-x402-receipt-adapter turns an x402 payment into an offline verifiable settlement attestation, facilitator or origin side, bound into Keystone.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 62
+    },
+    {
+      "slug": "receipt-sentinel",
+      "title": "Receipt sentinel",
+      "desc": "Tenant side sliding window monitor for AlgoVoi verification failures. Detects tamper attempts, replay patterns and scanning bursts. Zero dependencies.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 67
+    },
+    {
+      "slug": "epi-evidence-export",
+      "title": ".epi Evidence Export",
+      "desc": "Export Records Vault evidence as a portable, post quantum sealed .epi artifact an auditor verifies offline with a bundled verifier, no AlgoVoi account.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 126
+    },
+    {
+      "slug": "cancellation-receipt-lite",
+      "title": "Cancellation Receipt (lite)",
+      "desc": "Content addressed cancellation references for the AlgoVoi substrate: bind a mandate_ref and a cancellation reason into a deterministic cancellation_ref.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 144
+    },
+    {
+      "slug": "refund-receipt-lite",
+      "title": "Refund Receipt (lite)",
+      "desc": "Content addressed refund references for the AlgoVoi substrate: bind a subject_ref, a result and an amount into a deterministic refund_ref. Apache 2.0.",
+      "group": "Receipt and evidence formats",
+      "in_nav": true,
+      "nav_order": 145
+    },
+    {
+      "slug": "on-premise",
+      "title": "On-Premise Deployment",
+      "desc": "Run the full AlgoVoi payment stack on your own infrastructure: a self contained Docker Compose stack with no dependency on AlgoVoi hosted services.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 104
+    },
+    {
+      "slug": "payment-rails-sqlite",
+      "title": "Self Hosted x402 Agentic Payment Gateway",
+      "desc": "Self hosted x402 facilitator and agentic payment gateway: settle x402, MPP and AP2 on seven chains (Arc from 16 Sep 2026) with post quantum receipts an auditor verifies offline.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 106
+    },
+    {
+      "slug": "payment-rails-deployment-guide",
+      "title": "Payment Rails: Setup and Deployment",
+      "desc": "Install and go live with the AlgoVoi Payment Rails bundle: one command brings the stack up under systemd behind TLS, white labelled to your own domain.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 107
+    },
+    {
+      "slug": "payment-rails-security",
+      "title": "Agent Payment Rails Security",
+      "desc": "The three layer defence built into AV-RAILS. Every block across x402, MPP, AP2 and A2A is a Falcon-1024 signed, offline verifiable decision.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 109
+    },
+    {
+      "slug": "x402-self-host-guide",
+      "title": "Run Your Own x402 Facilitator",
+      "desc": "Step by step guide to self hosting an x402 facilitator: install the AlgoVoi payment rails, wire your domain, accept x402 payments in five minutes.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 110
+    },
+    {
+      "slug": "security-suite",
+      "title": "Security Suite",
+      "desc": "Layered, verifiable defence for agentic payment infrastructure: input integrity hardening before canonicalization, plus IP, geo and rate limit at the edge.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 155
+    },
+    {
+      "slug": "disaster-recovery",
+      "title": "Disaster Recovery and Key Ceremony",
+      "desc": "HA and DR runbook for the self hosted Verifiable Compliance Suite: recovery objectives, backup scope, restore and verify, and witnessed key ceremonies.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 158
+    },
+    {
+      "slug": "security",
+      "title": "Security posture",
+      "desc": "How AlgoVoi protects merchants, payers, regulators and the audit trail: concrete, independently verifiable claims with no marketing fluff.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 165
+    },
+    {
+      "slug": "incident-protocol",
+      "title": "Incident protocol",
+      "desc": "How AlgoVoi detects, communicates and recovers from chain or gateway incidents, including degraded versus down handling and the post mortem cadence.",
+      "group": "Self-host and operations",
+      "in_nav": true,
+      "nav_order": 166
+    },
+    {
+      "slug": "introduction",
+      "title": "Compliance-aware agentic payments",
+      "desc": "AlgoVoi settles agent and merchant payments on-chain with sanctions screening, an audit chain and offline-verifiable receipts. Hosted or self-hosted.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 0
+    },
+    {
+      "slug": "application-matrix",
+      "title": "Application matrix",
+      "desc": "How every AlgoVoi package, platform service and integration interacts: dependency graph, data flow diagram, and a full cross reference table.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 1
+    },
+    {
+      "slug": "free-licence",
+      "title": "Free licence",
+      "desc": "Every AlgoVoi application is free to use in production. A free licence key is issued at the suite store, verifies offline, and the source is public.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 2
+    },
+    {
+      "slug": "quickstart",
+      "title": "Quickstart: your first payment",
+      "desc": "Take your first AlgoVoi USDC payment in five minutes: sign up, add a testnet payout address, create a hosted checkout link, confirm settlement on chain.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 3
+    },
+    {
+      "slug": "take-a-payment",
+      "title": "Take a payment",
+      "desc": "Accept USDC on eight chains with hosted checkout, x402, MPP, AP2 or A2A, or use the tenant-free pay rail with twelve mainnet lanes and no account.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 4
+    },
+    {
+      "slug": "compliance-duties",
+      "title": "Compliance duties",
+      "desc": "UK MLRs, SAMLA, OFAC, OFSI, EU consolidated, travel rule, AI Act and DORA record keeping, each mapped to the AlgoVoi mechanism that discharges it.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 5
+    },
+    {
+      "slug": "verify-a-receipt",
+      "title": "Verify a receipt",
+      "desc": "Recompute an AlgoVoi receipt yourself: identify the format, get the bytes, check the digest or signature offline. No AlgoVoi service in the loop.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 6
+    },
+    {
+      "slug": "buy-or-self-host",
+      "title": "Get it or self-host",
+      "desc": "Run AlgoVoi hosted at 0.50% with a $1,000 mainnet trial, or self-host under a free perpetual licence. Current prices live in the store.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 7
+    },
+    {
+      "slug": "trial-and-pricing",
+      "title": "Trial and pricing",
+      "desc": "60 days free on testnet, then KYC unlocks $1,000 of free mainnet USDC across seven chains, then a flat 0.50% per confirmed payment with volume tiers.",
+      "group": "Start here",
+      "in_nav": true,
+      "nav_order": 8
+    },
+    {
+      "slug": "caip-identifiers",
+      "title": "CAIP Chain-Agnostic Identifiers",
+      "desc": "Byte canonical validation of CAIP-2 chain ids, CAIP-10 account ids and CAIP-19 asset ids in the AlgoVoi substrate. Three opt in tiers, two languages.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 43
+    },
+    {
+      "slug": "rfc9421-verifier",
+      "title": "RFC 9421 HTTP Signatures Verifier",
+      "desc": "AlgoVoi authored reference verifier for RFC 9421 HTTP Message Signatures and RFC 9530 Digest Fields. Python and TypeScript at byte parity, Ed25519.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 69
+    },
+    {
+      "slug": "rfc9421-signer",
+      "title": "RFC 9421 HTTP Signatures Signer",
+      "desc": "AlgoVoi authored reference signer for RFC 9421 HTTP Message Signatures and RFC 9530 Digest Fields. Python and TypeScript, byte for byte parity, Ed25519.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 70
+    },
+    {
+      "slug": "key-credential-binding",
+      "title": "Key-Credential Binding for RFC 9421 Agent Requests",
+      "desc": "Bind an RFC 9421 HTTP message signature to an issued agent credential: conformance vectors and reference verifiers (Python and TypeScript) for key anchoring, scope, and revocation checks.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 71
+    },
+    {
+      "slug": "canonicalisation-substrate",
+      "title": "JCS Canonicalisation Substrate",
+      "desc": "AlgoVoi authored JCS RFC 8785 canonicalisation discipline for agentic payment receipts, cross validated byte for byte across ten language implementations.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 73
+    },
+    {
+      "slug": "canonicalisation-substrate-v2",
+      "title": "jcs-rfc8785-v2: PQC aware discipline",
+      "desc": "jcs-rfc8785-v2 is the PQC aware revision of the JCS RFC 8785 discipline: strictly additive, adding a signature algorithm registry and fail closed verify.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 74
+    },
+    {
+      "slug": "pqc-substrate",
+      "title": "PQC Substrate Layer",
+      "desc": "AlgoVoi authored JCS and PQC integration layer: a signature_algorithm open enum, a fail closed verifier discipline, and a cross implementor anchor proof.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 76
+    },
+    {
+      "slug": "substrate-guard",
+      "title": "Substrate Guard (lite)",
+      "desc": "Deterministic input bounds and DoS hardening for the JCS substrate: runs before canonicalization and fails closed on resource hostile payloads. Apache 2.0.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 79
+    },
+    {
+      "slug": "substrate-comparison",
+      "title": "Substrate comparison",
+      "desc": "A layered comparison of methods for building tamper evident agentic payment records, decided by reproducible bytes at L1 and by capability above it.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 81
+    },
+    {
+      "slug": "conformance-vectors",
+      "title": "Conformance vector sets",
+      "desc": "45 JCS conformance anchor sets covering the full receipt lifecycle: 374 vectors and 1226 byte for byte agreements across ten reference implementations.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 83
+    },
+    {
+      "slug": "adopters",
+      "title": "Substrate Adopters Registry",
+      "desc": "Public registry of parties publishing artefacts under the jcs-rfc8785-v1 canonicalisation discipline: a neutral record of adoption, not an endorsement.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 85
+    },
+    {
+      "slug": "substrate-authorship-provenance",
+      "title": "JCS Substrate Authorship and Provenance",
+      "desc": "AlgoVoi-authored JCS substrate (RFC 8785 JSON Canonicalization Scheme): what is published, where it runs, and one-command independent verification. No AlgoVoi infrastructure required.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 89
+    },
+    {
+      "slug": "substrate-licensing-and-attribution",
+      "title": "Substrate Licensing and Attribution",
+      "desc": "How AlgoVoi's Apache 2.0 substrate may be used, what attribution the licence requires, and how AlgoVoi handles reuse without it. Read before you build.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 90
+    },
+    {
+      "slug": "substrate-2",
+      "title": "Substrate 2",
+      "desc": "Commercial AlgoVoi substrate and self hosted payments suite: the agentic payment gateway, post quantum evidence core, Command Center and Records Vault.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 130
+    },
+    {
+      "slug": "substrate-2-addons",
+      "title": "Substrate 2 Addons",
+      "desc": "Bolt additional services onto the Substrate 2 control plane. Any service with a health endpoint joins with two environment variables and self registers.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 131
+    },
+    {
+      "slug": "substrate-2-ports",
+      "title": "Ports and interfaces",
+      "desc": "Default ports and HTTP interfaces for every service in the AlgoVoi on-prem suite. Every port is overridable and no two defaults collide.",
+      "group": "Substrate and canonicalisation",
+      "in_nav": true,
+      "nav_order": 132
+    },
+    {
+      "slug": "settlement-verify",
+      "title": "Settlement Verification",
+      "desc": "Confirm a stablecoin payment settled and finalised on chain across seven live networks (Arc from 16 Sep 2026) with one call. The verification that runs in the AlgoVoi gateway.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 54
+    },
+    {
+      "slug": "audit-verifier",
+      "title": "Audit verifier",
+      "desc": "Standalone reference verifier for AlgoVoi selective disclosure audit bundles. Hosted, pip installable and npm installable, no infrastructure trust needed.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 65
+    },
+    {
+      "slug": "webhook-verifier",
+      "title": "Webhook verifier",
+      "desc": "Cryptographic verifier for AlgoVoi webhook signatures: v1 HMAC-SHA256 and v2 HKDF-SHA256 with HMAC-SHA384, offline capable, Python and TypeScript.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 66
+    },
+    {
+      "slug": "action-ref-verifier",
+      "title": "action_ref (legacy / interop)",
+      "desc": "action_ref is the legacy interop primitive, unchanged for existing adopters alongside its hosted verifier. New builds should use execution_ref. Apache 2.0.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 68
+    },
+    {
+      "slug": "avm-proofpack",
+      "title": "AVM Proofpack: Algorand State Proof Verification in Python",
+      "desc": "Verify an Algorand or Voi transaction offline in pure Python: avm-proofpack recomputes every hash and Merkle link from raw bytes up to the chain's state proof commitment. Zero dependencies.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 72
+    },
+    {
+      "slug": "verify-it-yourself",
+      "title": "Verify it yourself",
+      "desc": "Do not trust, verify. Clone the AlgoVoi conformance corpus and reproduce every vector byte for byte from raw preimages, offline, in Python or Node.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 84
+    },
+    {
+      "slug": "reseal",
+      "title": "AlgoVoi Reseal: quantum-seal the documents you already have",
+      "desc": "Re-anchor documents already signed with RSA or ECDSA into post-quantum, RFC-3161 timestamped, offline-verifiable attestations, before a quantum adversary can forge the original signature. Free open verifier plus a licensed sealer.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 121
+    },
+    {
+      "slug": "evidence-auditor",
+      "title": "AlgoVoi Evidence Auditor: prove your signed documents are valid, at scale",
+      "desc": "Batch-verify a whole archive of signed documents (classical RSA/ECDSA and post-quantum), flag the weak, expired and quantum-exposed ones, and produce a signed, tamper-evident audit report your auditor checks with the free verifier.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 122
+    },
+    {
+      "slug": "verifiable-archive",
+      "title": "Verifiable Archive",
+      "desc": "Tamper evident, post quantum document archiving: every document is content addressed, encrypted at rest, and recorded in an append only chain you verify.",
+      "group": "Verification and audit",
+      "in_nav": true,
+      "nav_order": 127
+    }
+  ],
+  "coverage": {
+    "Chains": 8,
+    "Compliance and record keeping": 23,
+    "Corpus and provenance": 16,
+    "Integrations": 12,
+    "Keystone and agent trust": 29,
+    "Platform and API": 24,
+    "Protocols": 5,
+    "Receipt and evidence formats": 12,
+    "Self-host and operations": 9,
+    "Start here": 9,
+    "Substrate and canonicalisation": 16,
+    "Verification and audit": 9
+  },
+  "nav_missing_pages": [],
+  "pages_not_in_nav": []
+}

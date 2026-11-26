@@ -1,6 +1,6 @@
 # Product × key-element overlap matrix
 
-65 products × 12 elements, 2026-11-23. `●` = the product implements or depends on the element (derived from its description/name; see [method](README.md#provenance--method)).
+68 products × 12 elements, 2026-11-26. `●` = the product implements or depends on the element (derived from its description/name; see [method](README.md#provenance--method)).
 
 Columns: `jcs` · `refs` · `rfc9421` · `pqc` · `receipts` · `keystone` · `conformance` · `verify` · `keyid` · `settlement` · `protocols` · `gateway`
 
@@ -52,12 +52,12 @@ Columns: `jcs` · `refs` · `rfc9421` · `pqc` · `receipts` · `keystone` · `c
 | [avm-hbar-bridge-relayer](https://github.com/chopmob-cloud/avm-hbar-bridge-relayer) | · | · | · | · | · | · | · | · | · | ● | · | · |
 | [avm-mesh](https://github.com/chopmob-cloud/avm-mesh) | · | · | · | · | ● | · | · | ● | · | ● | · | · |
 | [avm-proofpack](https://github.com/chopmob-cloud/avm-proofpack) | · | · | · | · | · | · | · | ● | · | ● | · | · |
-| [avm-proofpack-ts](https://github.com/chopmob-cloud/avm-proofpack-ts) | · | · | · | · | · | · | · | · | · | ● | · | · |
+| [avm-proofpack-ts](https://github.com/chopmob-cloud/avm-proofpack-ts) | · | · | · | · | · | · | ● | ● | · | ● | · | · |
 | [avm-voi-algo-bridge](https://github.com/chopmob-cloud/avm-voi-algo-bridge) | · | · | · | · | · | · | · | · | · | ● | · | · |
 | [avm-wormhole-ntt-relayer](https://github.com/chopmob-cloud/avm-wormhole-ntt-relayer) | · | · | · | · | · | · | · | · | · | ● | · | · |
 | [algovoi-a2a-glink](https://github.com/chopmob-cloud/algovoi-a2a-glink) | · | · | · | · | · | · | · | · | · | · | ● | · |
 | [algovoi-atb](https://github.com/chopmob-cloud/algovoi-atb) | · | · | · | ● | · | · | · | · | · | · | ● | · |
-| [algovoi-compliance-gate-a2a](https://github.com/chopmob-cloud/algovoi-compliance-gate-a2a) | · | · | · | · | · | · | · | · | · | · | ● | · |
+| [algovoi-compliance-gate-a2a](https://github.com/chopmob-cloud/algovoi-compliance-gate-a2a) | · | · | · | · | ● | · | · | · | · | · | ● | · |
 | [AlgoVoi-MCP-Server](https://github.com/chopmob-cloud/AlgoVoi-MCP-Server) | · | · | · | · | ● | · | · | · | · | · | ● | ● |
 | [AlgoVoi-Platform-Adapters](https://github.com/chopmob-cloud/AlgoVoi-Platform-Adapters) | · | · | · | · | · | · | · | · | · | · | ● | ● |
 | [algovoi-recurr](https://github.com/chopmob-cloud/algovoi-recurr) | · | · | · | · | ● | · | · | · | · | · | · | ● |
@@ -67,26 +67,29 @@ Columns: `jcs` · `refs` · `rfc9421` · `pqc` · `receipts` · `keystone` · `c
 | [algovoi-platform](https://github.com/chopmob-cloud/algovoi-platform) | · | · | · | ● | ● | · | · | · | · | ● | ● | ● |
 | [algovoi-secure-hub](https://github.com/chopmob-cloud/algovoi-secure-hub) | · | · | · | · | · | · | · | · | · | · | · | ● |
 | [.github](https://github.com/chopmob-cloud/.github) | · | · | · | · | · | · | · | · | · | · | · | · |
+| [algovoi-advisories](https://github.com/chopmob-cloud/algovoi-advisories) | · | · | · | · | · | · | · | · | · | · | · | · |
+| [algovoi-agent-guard](https://github.com/chopmob-cloud/algovoi-agent-guard) | · | · | · | · | ● | · | · | ● | · | · | · | · |
+| [algovoi-agent-guard-ts](https://github.com/chopmob-cloud/algovoi-agent-guard-ts) | · | · | · | · | ● | · | ● | ● | · | · | · | · |
 | [algovoi-keystone-sdk](https://github.com/chopmob-cloud/algovoi-keystone-sdk) | ● | · | · | · | · | ● | · | ● | · | · | · | · |
+| [algovoi-product-atlas](https://github.com/chopmob-cloud/algovoi-product-atlas) | ● | · | ● | ● | ● | ● | ● | ● | · | · | · | ● |
 | [chopmob-cloud](https://github.com/chopmob-cloud/chopmob-cloud) | · | · | · | · | · | · | · | · | · | · | · | · |
 | [chopmob-cloud.github.io](https://github.com/chopmob-cloud/chopmob-cloud.github.io) | · | · | · | · | · | · | · | · | · | · | · | · |
-| [Content](https://github.com/chopmob-cloud/Content) | · | · | · | · | · | · | · | · | · | · | · | · |
 
 ## Element coverage
 
 | Element | Products |
 |---|---|
-| [JCS canonicalisation (RFC 8785)](elements/jcs.md) | 16 |
+| [JCS canonicalisation (RFC 8785)](elements/jcs.md) | 17 |
 | [Content-addressed references](elements/refs.md) | 10 |
-| [RFC 9421 HTTP signatures + RFC 9530 Content-Digest](elements/rfc9421.md) | 11 |
-| [Post-quantum cryptography](elements/pqc.md) | 9 |
-| [Payment-lifecycle receipt / evidence formats](elements/receipts.md) | 16 |
-| [Keystone composition (L2) / Fabric spine](elements/keystone.md) | 10 |
-| [Cross-language conformance / cross-validation](elements/conformance.md) | 17 |
-| [Offline third-party verification / audit](elements/verify.md) | 25 |
+| [RFC 9421 HTTP signatures + RFC 9530 Content-Digest](elements/rfc9421.md) | 12 |
+| [Post-quantum cryptography](elements/pqc.md) | 10 |
+| [Payment-lifecycle receipt / evidence formats](elements/receipts.md) | 20 |
+| [Keystone composition (L2) / Fabric spine](elements/keystone.md) | 11 |
+| [Cross-language conformance / cross-validation](elements/conformance.md) | 20 |
+| [Offline third-party verification / audit](elements/verify.md) | 29 |
 | [Key identity / DID / credential binding](elements/keyid.md) | 4 |
 | [On-chain settlement / state proofs / bridges (AVM)](elements/settlement.md) | 14 |
 | [Agent payment protocols (AP2 / ACP / x402 / MPP / A2A)](elements/protocols.md) | 16 |
-| [Hosted gateway / pay rail / platform adapters](elements/gateway.md) | 9 |
+| [Hosted gateway / pay rail / platform adapters](elements/gateway.md) | 10 |
 
 [← Back to the atlas](README.md)
