@@ -37,6 +37,8 @@ def main():
     atlas = load("atlas.json")
     subjects = load("subjects.json")
     platforms = load("platforms.json")
+    conflict_path = os.path.join(ROOT, "data", "conflicts.json")
+    conflict = json.load(open(conflict_path, encoding="utf-8")) if os.path.exists(conflict_path) else None
 
     products = atlas["products"]
     elements = atlas["elements"]
@@ -229,6 +231,29 @@ def main():
         A("")
 
     # ---- how it fits together ------------------------------------------------
+    A("## Conflicting sources")
+    A("")
+    A("Where two live sources disagree about the same figure, this document does not pick "
+      "a winner. The discrepancy is recorded, with each reading attributed, so a reader "
+      "knows the number is unsettled rather than trusting whichever page they opened first.")
+    A("")
+    if conflict is not None:
+        for c in conflict["conflicts"]:
+            A(f"**{c['subject']}** — {c['measured']}")
+            A("")
+            A("| Source | Says |")
+            A("|---|---|")
+            for src in c["sources"]:
+                A(f"| {src['source']} | {src['says']} |")
+            A("")
+            A(f"*Resolution: {c['resolution']}*")
+            A("")
+            A(f"Upstream fix: {c['fix_at']}")
+            A("")
+    else:
+        A("_No conflicts recorded in `data/conflicts.json`._")
+        A("")
+
     A("## How to navigate this")
     A("")
     A("| You want | Read |")
