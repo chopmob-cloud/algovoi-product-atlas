@@ -1,0 +1,39 @@
+{
+  "generated": "2026-11-26",
+  "purpose": "Live sources that disagree about the same figure. Recorded, not resolved here: the atlas quotes whichever source it is reading, so a disagreement between sources surfaces as a disagreement between pages unless it is stated explicitly.",
+  "conflicts": [
+    {
+      "subject": "Agent Trust Bench (ATB) adversarial x402 profile count",
+      "measured": "six sources give five different figures; four of those sources were probed and all returned HTTP 200 (three distinct hosts), and no artefact proves any single count",
+      "sources": [
+        {
+          "source": "Bench site https://agent-trust-bench.algovoi.co.uk/ (probed: HTTP 200, 2026-11-26)",
+          "says": "187 adversarial x402 profiles across 42 threat categories"
+        },
+        {
+          "source": "Docs page https://docs.algovoi.co.uk/agent-trust-bench (live, HTTP 200)",
+          "says": "187 adversarial x402 profiles"
+        },
+        {
+          "source": "PyPI algovoi-atb 0.1.6 summary (https://pypi.org/pypi/algovoi-atb/json, HTTP 200)",
+          "says": "178 adversarial x402 payment profiles"
+        },
+        {
+          "source": "algovoi-atb README and GitHub repo description (gh api repos/chopmob-cloud/algovoi-atb)",
+          "says": "166 adversarial x402 payment profiles"
+        },
+        {
+          "source": "agent-trust-bench GitHub repo description (gh api repos/chopmob-cloud/agent-trust-bench)",
+          "says": "138 adversarial x402 profiles across 30 threat categories"
+        },
+        {
+          "source": "Bench API https://agent-trust-bench.algovoi.co.uk/profiles (probed: HTTP 200, returns a JSON object with an 'available' list)",
+          "says": "205 concrete profile ids after expanding two templates, of which 204 are adversarial (one 'honest' baseline)"
+        }
+      ],
+      "resolution": "Unresolved. The live API is the only machine-checkable enumeration and it does not match any published headline. No number is asserted in the atlas; the upstream figure is quoted with its source and this table states the discrepancy.",
+      "fix_at": "agent-trust-bench (single source of truth for the profile count, surfaced through its API), then docs.algovoi.co.uk/agent-trust-bench, the algovoi-atb README, its PyPI summary and its GitHub description. Once those agree, delete this entry and let the atlas quote the reconciled figure."
+    }
+  ],
+  "probe_note": "Probed 2026-11-26: four sources returned HTTP 200 across three hosts — agent-trust-bench.algovoi.co.uk (site and API), docs.algovoi.co.uk, pypi.org. Both GitHub descriptions were read via authenticated gh api."
+}

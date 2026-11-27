@@ -2,7 +2,7 @@
 
 One document covering the whole estate: the stack, the products that build it, the subjects it documents, and the surfaces it runs on. Read this first; every other page is a detail of something named here.
 
-*Built 2026-11-26 from live sources — 68 public repos, 172 documented subjects, 7 live platform surfaces. Every number below is read from those artefacts at build time, not typed.*
+*Built 2026-11-27 from live sources — 68 public repos, 172 documented subjects, 7 live platform surfaces. Every number below is read from those artefacts at build time, not typed.*
 
 ## At a glance
 
@@ -265,6 +265,25 @@ Every public product, grouped by the layer it sits in. Descriptions are quoted f
 - **[chopmob-cloud](https://github.com/chopmob-cloud/chopmob-cloud)** — The open substrate for agentic payments. Built so others could use it.
 - **[chopmob-cloud.github.io](https://github.com/chopmob-cloud/chopmob-cloud.github.io)** — AlgoVoi substrate hub
 
+## Conflicting sources
+
+Where two live sources disagree about the same figure, this document does not pick a winner. The discrepancy is recorded, with each reading attributed, so a reader knows the number is unsettled rather than trusting whichever page they opened first.
+
+**Agent Trust Bench (ATB) adversarial x402 profile count** — six sources give five different figures; four of those sources were probed and all returned HTTP 200 (three distinct hosts), and no artefact proves any single count
+
+| Source | Says |
+|---|---|
+| Bench site https://agent-trust-bench.algovoi.co.uk/ (probed: HTTP 200, 2026-11-26) | 187 adversarial x402 profiles across 42 threat categories |
+| Docs page https://docs.algovoi.co.uk/agent-trust-bench (live, HTTP 200) | 187 adversarial x402 profiles |
+| PyPI algovoi-atb 0.1.6 summary (https://pypi.org/pypi/algovoi-atb/json, HTTP 200) | 178 adversarial x402 payment profiles |
+| algovoi-atb README and GitHub repo description (gh api repos/chopmob-cloud/algovoi-atb) | 166 adversarial x402 payment profiles |
+| agent-trust-bench GitHub repo description (gh api repos/chopmob-cloud/agent-trust-bench) | 138 adversarial x402 profiles across 30 threat categories |
+| Bench API https://agent-trust-bench.algovoi.co.uk/profiles (probed: HTTP 200, returns a JSON object with an 'available' list) | 205 concrete profile ids after expanding two templates, of which 204 are adversarial (one 'honest' baseline) |
+
+*Resolution: Unresolved. The live API is the only machine-checkable enumeration and it does not match any published headline. No number is asserted in the atlas; the upstream figure is quoted with its source and this table states the discrepancy.*
+
+Upstream fix: agent-trust-bench (single source of truth for the profile count, surfaced through its API), then docs.algovoi.co.uk/agent-trust-bench, the algovoi-atb README, its PyPI summary and its GitHub description. Once those agree, delete this entry and let the atlas quote the reconciled figure.
+
 ## How to navigate this
 
 | You want | Read |
@@ -280,9 +299,9 @@ Every public product, grouped by the layer it sits in. Descriptions are quoted f
 
 ## Provenance
 
-- Repo inventory: `gh repo list chopmob-cloud`, snapshot refreshed 2026-11-26 (`data/repos.snapshot.json`).
-- Product and element counts: `scripts/build_atlas.py` over that snapshot (2026-11-26).
-- Subject list and group coverage: `scripts/build_subjects.py` against the live `https://docs.algovoi.co.uk/llms.txt` and the site's `docs.json` navigation (2026-11-26).
+- Repo inventory: `gh repo list chopmob-cloud`, snapshot refreshed 2026-11-27 (`data/repos.snapshot.json`).
+- Product and element counts: `scripts/build_atlas.py` over that snapshot (2026-11-27).
+- Subject list and group coverage: `scripts/build_subjects.py` against the live `https://docs.algovoi.co.uk/llms.txt` and the site's `docs.json` navigation (2026-11-27).
 - Platform statuses: `scripts/probe_platforms.py`, HTTP probed 2026-11-26 (`data/platforms.json`).
 - The product→element overlap is **derived** from each repo's name and GitHub description by transparent keyword rules plus curated overrides. It is a map, not a conformance claim: verify the specific repo before relying on a cell.
 - Counts of chains, protocols and tools are **not** restated here. The documentation pages that own those numbers state them, and this document links to those pages, because a number restated in two places drifts.
