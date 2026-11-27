@@ -328,15 +328,44 @@ def main():
 
     if "--emit-docs" in sys.argv:
         dest = sys.argv[sys.argv.index("--emit-docs") + 1]
-        # A carbon copy, byte for byte. The document's links are already absolute
-        # (public GitHub and docs.algovoi.co.uk URLs), so nothing needs rewriting to
-        # resolve from the docs site — and rewriting would make it no longer a copy.
-        # MDX safety is asserted above (no angle brackets, braces or JSX outside code).
-        open(dest, "w", encoding="utf-8", newline="\n").write(out)
+        # The docs copy is the same document, but it is an MDX *page*: it needs
+        # frontmatter, because without it the site synthesises a title from the
+        # filename and renders a second H1 above the document's own heading.
+        front = (
+            "---\n"
+            "title: The AlgoVoi overview\n"
+            "sidebarTitle: Overview\n"
+            'description: "The whole AlgoVoi estate in one document: the stack and its layers, '
+            "the public products that build it, every documented subject, and the live platform "
+            'surfaces."\n'
+            "---\n\n"
+        )
+        # Every page in the docs repo carries its title in frontmatter and NO body H1,
+        # because the site renders the title from frontmatter. Strip the overview's H1
+        # for the page copy only; OVERVIEW.md keeps it, since GitHub renders no title.
+        first_nl = out.index("\n")
+        if not out[:first_nl].startswith("# "):
+            sys.exit("ABORT: OVERVIEW.md does not start with an H1; the page would lose its title")
+        # Exactly one newline is stripped: the one terminating the H1. Nothing else is
+        # touched, so `body` is the literal text below the H1 and the hash means what
+        # the message says it means.
+        body = out[first_nl + 1:]
+        # a body H1 would render a second title; check start and mid-body both, since
+        # the body now begins with a blank line rather than the H1's newline.
+        if body.lstrip("\n").startswith("# ") or "\n# " in body:
+            sys.exit("ABORT: a body H1 survived into the docs copy; it would render twice")
+        docs_out = front + body
+        open(dest, "w", encoding="utf-8", newline="\n").write(docs_out)
+        # Prove the page is the same document: read it back, strip the frontmatter,
+        # and compare against the literal below-H1 slice of OVERVIEW.md.
         import hashlib
-        h = hashlib.sha256(out.encode()).hexdigest()[:16]
-        print(f"docs copy written: {dest} ({len(out)} chars, sha256:{h}) — identical to OVERVIEW.md")
-
+        written = open(dest, encoding="utf-8", newline="").read().replace("\r\n", "\n")
+        w_body = written.split("---\n\n", 1)[1] if written.startswith("---") else written
+        if w_body != body:
+            sys.exit("ABORT: the written page body is not identical to OVERVIEW.md below its H1")
+        h = hashlib.sha256(body.encode()).hexdigest()[:16]
+        print(f"docs copy written: {dest} ({len(docs_out)} chars, frontmatter + body)")
+        print(f"body sha256:{h} verified identical to OVERVIEW.md below its H1 (read back and compared)")
 
 if __name__ == "__main__":
     main()
